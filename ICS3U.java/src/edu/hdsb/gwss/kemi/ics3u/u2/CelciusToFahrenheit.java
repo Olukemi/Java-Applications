@@ -1,5 +1,8 @@
 /*
- * Name:
+ * Name: Kemi
+ * Date: Feb 28th 2019
+ * Version: v0.01
+ * Description: Celcius to Fahrenheit
  */
 package edu.hdsb.gwss.kemi.ics3u.u2;
 
@@ -18,16 +21,14 @@ public class CelciusToFahrenheit {
         
         // Formual (0°C × 9/5) + 32 = 32°
         
-        Scanner input = new Scanner(System.in);
-        
+        // User inputs a celcius number 
         System.out.println("Enter a degree in Celcius: ");
-        double numberc = input.nextDouble();
+        Scanner input = new Scanner(System.in);
+        int numberc = input.nextInt();
+        // answer is input in the equation
+        answer = numberc * (9.0 /5) + 32;
         
-        int answerf = numberc * (9.0 /5) + 32; 
-       
-        
-        
-        System.out.println(numberc + "Celcius is" + answerf + "Fahrenheit");
+        System.out.println(numberc + "Celcius is" + answer + "Fahrenheit");
         
         
         

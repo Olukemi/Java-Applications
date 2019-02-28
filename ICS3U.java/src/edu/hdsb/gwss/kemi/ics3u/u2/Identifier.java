@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Kemi
+ * Date: Feb 28th 2019
+ * Version: v0.01
+ * Description: Identifiers
  */
 package edu.hdsb.gwss.kemi.ics3u.u2;
 
@@ -16,14 +17,23 @@ public class Identifier {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        // Primitive data types
-        int age = 33;
+        // PRIMATIVE DATA TYPES
+        int age = 33; // nummber with no decimals
         long realBigNumber = 8447481;
-        double winnipegPercent;
-        char middleIntital = 'A';
-        boolean doYouLikeThisClass = false;
+        double winnipegPercent = 0.5; // number with decimals
+        char middleInitial = 'A'; // single character
+        boolean doYouLikeThisClass = true; //true or false only
         
-        //other data type
+        
+        //OTHER DATA TYPE (not primative)
+        String yourFirstName = "Kemi";
+        
+        
+        //DISPLAY OUTPUT
+        System.out.println("Hello " + yourFirstName + "!");
+        System.out.println("Wow! " + age + " is so old");
+        System.out.println("What does " + middleInitial + " stand for?");
+        System.out.println("Do you like this class? " + doYouLikeThisClass);
         
     }
     

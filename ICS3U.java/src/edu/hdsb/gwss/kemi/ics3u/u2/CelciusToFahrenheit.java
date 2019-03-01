@@ -26,9 +26,9 @@ public class CelciusToFahrenheit {
         Scanner input = new Scanner(System.in);
         int numberc = input.nextInt();
         // answer is input in the equation
-        answer = numberc * (9.0 /5) + 32;
+        double answer = numberc * (9.0 /5) + 32;
         
-        System.out.println(numberc + "Celcius is" + answer + "Fahrenheit");
+        System.out.println(numberc + " Celcius is " + answer + " Fahrenheit");
         
         
         

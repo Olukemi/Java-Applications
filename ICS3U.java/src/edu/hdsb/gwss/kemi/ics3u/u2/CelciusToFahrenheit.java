@@ -24,7 +24,7 @@ public class CelciusToFahrenheit {
         // User inputs a celcius number 
         System.out.println("Enter a degree in Celcius: ");
         Scanner input = new Scanner(System.in);
-        int numberc = input.nextInt();
+        double numberc = input.nextDouble();
         // answer is input in the equation
         double answer = numberc * (9.0 /5) + 32;
         

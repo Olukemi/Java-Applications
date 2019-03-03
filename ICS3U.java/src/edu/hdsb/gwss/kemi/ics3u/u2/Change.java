@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Kemi
+ * Date: Mar 2nd 2019
+ * Version: v0.01
+ * Description: Change Calculator
  */
 package edu.hdsb.gwss.kemi.ics3u.u2;
 

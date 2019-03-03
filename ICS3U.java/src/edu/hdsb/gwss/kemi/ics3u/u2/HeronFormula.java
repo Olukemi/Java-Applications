@@ -18,17 +18,17 @@ public class HeronFormula {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter three sides of any triangle");
+        System.out.println("Enter three sides of any triangle: ");
         int side1 = input.nextInt();
         int side2 = input.nextInt();
         int side3 = input.nextInt();
         
         double s = ((side1 + side2 + side3) / 2);
         
-        double area = Math.sqrt();
+        double area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
         System.out.println(area);
         
-        System.out.println("The area of your triangel is ");
+        System.out.println("The area of your triangle is " + area);
     }
     
 }

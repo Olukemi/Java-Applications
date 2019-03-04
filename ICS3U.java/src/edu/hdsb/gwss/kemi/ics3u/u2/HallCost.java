@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.util.Scanner;
 package edu.hdsb.gwss.kemi.ics3u.u2;
 
 /**
@@ -15,7 +16,11 @@ public class HallCost {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        String name = input.nextLine();
+        int 
+        
+        
     }
     
 }

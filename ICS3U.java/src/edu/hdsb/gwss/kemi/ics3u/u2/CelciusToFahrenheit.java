@@ -17,7 +17,6 @@ public class CelciusToFahrenheit {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         
         // Formual (0°C × 9/5) + 32 = 32°
         

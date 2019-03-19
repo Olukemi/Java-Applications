@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Kemi
+ * Date: March 19th 2019
+ * Version: v0.01
+ * Description: This program compares the cell plan between two different plans 
+                and tells the user which is better
  */
 package edu.hdsb.gwss.kemi.ics3u.u3;
 
@@ -21,28 +23,31 @@ public class TheCellSell {
         //CONSTANTS
         int dayMinCost_A = 25;
         int eveningMinCost_A = 15;
-        int weekendMin_A = 20;
+        int weekendMinCost_A = 20;
         
         int dayMinCost_B = 45;
-        int eveningMin_B = 35;
-        int weekendMin_B = 25; 
+        int eveningMinCost_B = 35;
+        int weekendMinCost_B = 25; 
         
                 
         //VARIABLES
         int costPlanA = 0;
         int costPlanB = 0;
-        
-        int dayMin = input.nextInt();
-        int eveMin = input.nextInt();
-        int weeMin = input.nextInt();
                  
         //SLASH PAGE
         System.out.println("WELCOME TO CELL SELL COMPARE APP!");
         System.out.println("We will carefully compare the prices of twwo cell/n "
                 + "plans and respond in which of the two has the best offer");
+        System.out.println("Please enter the following");
+        System.out.println("--------------------------");
         
         //INPUT
-        
+        System.out.println("Number of daytime minutes:");
+        int dayMin = input.nextInt();
+        System.out.println("Number of evening minutes:");
+        int eveMin = input.nextInt();
+        System.out.println("Number of weekend minutes:");
+        int weeMin = input.nextInt();
         
         //PROCESSING
         if (dayMin > 100){
@@ -50,9 +55,24 @@ public class TheCellSell {
         }
         if (dayMin > 250 ){
             costPlanB = costPlanB + (dayMin - 250) * dayMinCost_B;
-         }
+        }
         
+        costPlanA = costPlanA / 100;
+        costPlanB = costPlanB / 100;        
         //OUTPUT
+        System.out.println("Plan A costs" + costPlanA);
+        System.out.println("Plan B costs" + costPlanB);
+        
+        if (costPlanA == costPlanB){
+            System.out.println("Plan A and B are the same price!");
+        }
+        else if (costPlanA > costPlanB){
+            System.out.println("Plan B is the better deal!");
+        }
+        else 
+            System.out.println("Plan A is the better deal!");
+        
+ 
     }
     
 }

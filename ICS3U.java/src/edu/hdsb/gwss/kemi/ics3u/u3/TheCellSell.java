@@ -31,8 +31,12 @@ public class TheCellSell {
         
                 
         //VARIABLES
-        int costPlanA = 0;
-        int costPlanB = 0;
+        double costPlanA_Day = 0;
+        double costPlanB_Day = 0;
+        double costPlanA_Eve = 0;
+        double costPlanB_Eve = 0;
+        double costPlanA_Week = 0;
+        double costPlanB_Week = 0;     
                  
         //SLASH PAGE
         System.out.println("WELCOME TO CELL SELL COMPARE APP!");
@@ -51,22 +55,26 @@ public class TheCellSell {
         
         //PROCESSING
         if (dayMin > 100){
-            costPlanA = costPlanA + (dayMin - 100) * dayMinCost_A;
+            costPlanA_Day = costPlanA_Day + (dayMin - 100) * dayMinCost_A;
         }
         if (dayMin > 250 ){
-            costPlanB = costPlanB + (dayMin - 250) * dayMinCost_B;
+            costPlanB_Day = costPlanB_Day + (dayMin - 250) * dayMinCost_B;
         }
         
-        costPlanA = costPlanA / 100;
-        costPlanB = costPlanB / 100;        
-        //OUTPUT
-        System.out.println("Plan A costs" + costPlanA);
-        System.out.println("Plan B costs" + costPlanB);
+        costPlanA_Day = costPlanA_Day / 100;
+        costPlanB_Day = costPlanB_Day / 100;
         
-        if (costPlanA == costPlanB){
+        double costTotal_A = costPlanA_Day + costPlanA_Eve + costPlanA_Week;
+        double costTotal_A = costPlanA_Day + costPlanA_Eve + costPlanA_Week;       
+        
+        //OUTPUT
+        System.out.println("Plan A costs" + costPlanA_Day);
+        System.out.println("Plan B costs" + costPlanB_Day);
+        
+        if (costPlanA_Day == costPlanB_Day){
             System.out.println("Plan A and B are the same price!");
         }
-        else if (costPlanA > costPlanB){
+        else if (costPlanA_Day > costPlanB_Day){
             System.out.println("Plan B is the better deal!");
         }
         else 

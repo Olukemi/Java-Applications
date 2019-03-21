@@ -61,11 +61,11 @@ public class TheCellSell {
             costPlanB_Day = costPlanB_Day + (dayMin - 250) * dayMinCost_B;
         }
         
-        costPlanA_Day = costPlanA_Day / 100;
-        costPlanB_Day = costPlanB_Day / 100;
-        
         double costTotal_A = costPlanA_Day + costPlanA_Eve + costPlanA_Week;
-        double costTotal_A = costPlanA_Day + costPlanA_Eve + costPlanA_Week;       
+        double costTotal_B = costPlanB_Day + costPlanB_Eve + costPlanB_Week; 
+        
+        costTotal_A = costTotal_A / 100;
+        costTotal_B = costTotal_B / 100;
         
         //OUTPUT
         System.out.println("Plan A costs" + costPlanA_Day);

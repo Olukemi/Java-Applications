@@ -21,29 +21,31 @@ public class AcidRain {
         //CONSTANTS
         
         //VARIABLES
-   
-        double acidity = 0;
+        int acidity = 0;
         
         //SPLASH PAGE
         System.out.println("ACID RAIN");
-        System.out.println("Acid Rain is an environmental problem.  "
+        System.out.println("Acid Rain is an environmental problem. "
                 + "This program determines if the pH level in water is safe for fish.");
-        System.out.println("---------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------");
         System.out.println("Enter the pH level:");
         
         //INPUT
-        double pH = input.nextInt();
+        double pH = input.nextDouble();
         
+        //PROCESSING
         if (pH > 7.5){
             acidity = 1;
         }
         else if (pH < 6.5){
             acidity = 2;
         }
+        else if (pH >= 6.5 || pH <= 7.5){
+            acidity = 3;
+        }
         
-        //PROCESSING
         //OUTPUT
-        switch (acidityLevel){
+        switch (acidity){
             case 1 :
                System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE");
                break;
@@ -52,9 +54,6 @@ public class AcidRain {
                break;
             case 3:
                System.out.println("NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.");
-               break;
-            default :
-               System.out.println("INVALID");
         }
         
         

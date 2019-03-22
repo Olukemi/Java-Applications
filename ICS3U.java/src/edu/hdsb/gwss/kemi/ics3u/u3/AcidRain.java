@@ -20,9 +20,8 @@ public class AcidRain {
         Scanner input = new Scanner(System.in);
         //CONSTANTS
         
-        //VARIABLES
-   
-        double acidity = 0;
+        //VARIABLE
+        int acidity = 0;
         
         //SPLASH PAGE
         System.out.println("ACID RAIN");
@@ -32,18 +31,21 @@ public class AcidRain {
         System.out.println("Enter the pH level:");
         
         //INPUT
-        double pH = input.nextInt();
-        
+        double pH = input.nextDouble();
+      
+        //PROCESSING
         if (pH > 7.5){
             acidity = 1;
         }
         else if (pH < 6.5){
             acidity = 2;
         }
-        
-        //PROCESSING
+        else if (pH > 6.5 ^ pH <=7.5){
+            acidity = 3;
+        }
+   
         //OUTPUT
-        switch (acidityLevel){
+        switch (acidity){
             case 1 :
                System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE");
                break;
@@ -54,7 +56,8 @@ public class AcidRain {
                System.out.println("NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.");
                break;
             default :
-               System.out.println("INVALID");
+               System.out.println("INVALID pH");
+               break;
         }
         
         

@@ -18,48 +18,37 @@ public class AcidRain {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        //CONSTANTS
-        
-
-        //VARIABLE
-
-        //VARIABLES
-
+        //CONSTANTS: N/A
+     
+        //VARIABLES: Acidity numeber starts at 0 but changes through code to match cases
         int acidity = 0;
         
-        //SPLASH PAGE
+        //SPLASH PAGE: Visual and description of code with function and instruction
         System.out.println("ACID RAIN");
         System.out.println("Acid Rain is an environmental problem. "
                 + "This program determines if the pH level in water is safe for fish.");
         System.out.println("------------------------------------------------------------------------------------------------------");
         System.out.println("Enter the pH level:");
         
-        //INPUT
+        //INPUT: Only input for user which is the pH of rain the user found
         double pH = input.nextDouble();
 
-      
-
-        
-
-        //PROCESSING
-        if (pH > 7.5){
+        //PROCESSING: The different ranges of pH that depending on input matches one of the lines below
+        if (pH <= 1 || pH >= 10){
+            acidity = 0;
+        }
+        else if (pH > 7.5){
             acidity = 1;
         }
         else if (pH < 6.5){
             acidity = 2;
         }
-
         else if (pH > 6.5 ^ pH <=7.5){
             acidity = 3;
         }
-   
-
-        else if (pH >= 6.5 || pH <= 7.5){
-            acidity = 3;
-        }
         
-
-        //OUTPUT
+        //OUTPUT: This tells the user the pH of the rain they collected and works 
+        //depending on the adicity ranges that is either 1, 2, 3, or 0 and prints out the acidity of the rain
         switch (acidity){
             case 1 :
                System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE");
@@ -69,13 +58,10 @@ public class AcidRain {
                break;
             case 3:
                System.out.println("NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.");
-
                break;
-            default :
+            case 0 :
                System.out.println("INVALID pH");
-               break;
-=======
->>>>>>> cc4b036387e3092b0118a9dfd175d17b1cc381e2
+
         }
         
         

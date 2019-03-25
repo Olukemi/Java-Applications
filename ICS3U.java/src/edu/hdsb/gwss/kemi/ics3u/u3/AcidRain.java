@@ -20,11 +20,11 @@ public class AcidRain {
         Scanner input = new Scanner(System.in);
         //CONSTANTS
         
-<<<<<<< HEAD
+
         //VARIABLE
-=======
+
         //VARIABLES
->>>>>>> cc4b036387e3092b0118a9dfd175d17b1cc381e2
+
         int acidity = 0;
         
         //SPLASH PAGE
@@ -36,11 +36,11 @@ public class AcidRain {
         
         //INPUT
         double pH = input.nextDouble();
-<<<<<<< HEAD
+
       
-=======
+
         
->>>>>>> cc4b036387e3092b0118a9dfd175d17b1cc381e2
+
         //PROCESSING
         if (pH > 7.5){
             acidity = 1;
@@ -48,17 +48,17 @@ public class AcidRain {
         else if (pH < 6.5){
             acidity = 2;
         }
-<<<<<<< HEAD
+
         else if (pH > 6.5 ^ pH <=7.5){
             acidity = 3;
         }
    
-=======
+
         else if (pH >= 6.5 || pH <= 7.5){
             acidity = 3;
         }
         
->>>>>>> cc4b036387e3092b0118a9dfd175d17b1cc381e2
+
         //OUTPUT
         switch (acidity){
             case 1 :
@@ -69,7 +69,7 @@ public class AcidRain {
                break;
             case 3:
                System.out.println("NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.");
-<<<<<<< HEAD
+
                break;
             default :
                System.out.println("INVALID pH");

@@ -18,7 +18,12 @@ public class AcidRain {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        
         //CONSTANTS: N/A
+        final int RESULT_INVALID = 00;
+        final int RESULT_ALKALINE = 11;
+        final int RESULT_ACIDIC = 22;
+        final int RESULT_NEUTRAL = 33;
      
         //VARIABLES: Acidity numeber starts at 0 but changes through code to match cases
         int acidity = 0;
@@ -28,38 +33,38 @@ public class AcidRain {
         System.out.println("Acid Rain is an environmental problem. "
                 + "This program determines if the pH level in water is safe for fish.");
         System.out.println("------------------------------------------------------------------------------------------------------");
-        System.out.println("Enter the pH level:");
         
         //INPUT: Only input for user which is the pH of rain the user found
+        System.out.println("Enter the pH level:");
         double pH = input.nextDouble();
 
         //PROCESSING: The different ranges of pH that depending on input matches one of the lines below
         if (pH <= 1 || pH >= 10){
-            acidity = 0;
+            acidity = RESULT_INVALID;
         }
         else if (pH > 7.5){
-            acidity = 1;
+            acidity = RESULT_ALKALINE;
         }
         else if (pH < 6.5){
-            acidity = 2;
+            acidity = RESULT_ACIDIC;
         }
-        else if (pH > 6.5 ^ pH <=7.5){
-            acidity = 3;
+        else if (pH >= 6.5 ^ pH <=7.5){
+            acidity = RESULT_NEUTRAL;
         }
         
         //OUTPUT: This tells the user the pH of the rain they collected and works 
         //depending on the adicity ranges that is either 1, 2, 3, or 0 and prints out the acidity of the rain
         switch (acidity){
-            case 1 :
+            case RESULT_ALKALINE :
                System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE");
                break;
-            case 2 :
+            case RESULT_ACIDIC :
                System.out.println("TOO ACIDIC - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");
                break;
-            case 3:
+            case RESULT_NEUTRAL:
                System.out.println("NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.");
                break;
-            case 0 :
+            case RESULT_INVALID :
                System.out.println("INVALID pH");
 
         }

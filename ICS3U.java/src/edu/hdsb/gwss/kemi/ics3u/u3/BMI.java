@@ -59,6 +59,7 @@ public class BMI {
         }
         else if (typeOfFormula != "M" || typeOfFormula != "I")
             System.out.println("INVAILD ANSWER");
+        
   
 
         //OUTPUT: Finally, depending on the numeber one of these if statements 

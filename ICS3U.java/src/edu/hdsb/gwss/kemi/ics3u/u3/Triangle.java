@@ -27,7 +27,7 @@ public class Triangle {
         //VARIABLES: N/A
         double hypoth = 0;
         
-        //SPLASH PAGE:
+        //SPLASH PAGE: Tells the users the characteristics that make a triangle and a right angle triangle
         System.out.println("TRIANGLES\nThree numbers represent the side lengths "
                 + "\nof a triangle when the sum of any two sides is greater than the third side.");
         System.out.println("RIGHT TRIANGLES\nA right-angled triangle has the "
@@ -35,7 +35,7 @@ public class Triangle {
                 + "\nsquared, the sum of two smaller values is equal to the larger value.");
         System.out.println("--------------------------------------------------------------------");
 
-        //INPUT:
+        //INPUT: Asks the user for 3 sides
         System.out.println("Enter side length #1(cm):");
         double sideLenght1 = input.nextDouble();
         System.out.println("Enter side length #2(cm):");
@@ -43,7 +43,8 @@ public class Triangle {
         System.out.println("Enter side length #3(cm):");
         double sideLenght3 = input.nextDouble();
         
-        //PROCESSING & //OUTPUT:
+        //PROCESSING & //OUTPUT: Determines if the input can make a triangle and tells the user if so if it can make
+        // a right angle triangle 
         if ((sideLenght1 + sideLenght2) >= sideLenght3 && (sideLenght2 + sideLenght3) >= sideLenght1 && (sideLenght1 + sideLenght3) >= sideLenght2){
             System.out.println("These sides CAN make a triangle!");
             if (sideLenght1 > sideLenght2 && sideLenght1 > sideLenght3){

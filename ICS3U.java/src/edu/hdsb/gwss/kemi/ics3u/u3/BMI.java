@@ -41,25 +41,45 @@ public class BMI {
         //M or I they have their own formula and code regardless of the number(rating) 
         //the value works on the output below(reasoing to only one rating variable). 
         //It also askes for weight and height for both formulas
-        if (typeOfFormula.equals("M")) {
-            System.out.println("Please enter your weight(kg):");
-            double weight = input.nextDouble();
-            System.out.println("Please enter your height(m):");
-            double height = input.nextDouble();
-            rating = Math.round(weight / (height * height));
-            System.out.println(rating);
-        } 
-        else if (typeOfFormula.equals("I")) {
-            System.out.println("Please enter your weight(lbs):");
-            double weight = input.nextDouble();
-            System.out.println("Please enter your height(in):");
-            double height = input.nextDouble();
-            rating = Math.round((weight * 703) / (height * height));
-            System.out.println(rating);    
-        }
-        else if (typeOfFormula != "M" || typeOfFormula != "I")
-            System.out.println("INVAILD ANSWER");
+        //if (typeOfFormula.equals("M")) {
+            //System.out.println("Please enter your weight(kg):");
+            //double weight = input.nextDouble();
+            //System.out.println("Please enter your height(m):");
+            //double height = input.nextDouble();
+            //rating = Math.round(weight / (height * height));
+            //System.out.println(rating);
+        //} 
+        //else if (typeOfFormula.equals("I")) {
+            //System.out.println("Please enter your weight(lbs):");
+            //double weight = input.nextDouble();
+            //System.out.println("Please enter your height(in):");
+            //double height = input.nextDouble();
+            //rating = Math.round((weight * 703) / (height * height));
+            //System.out.println(rating);    
+        //}
+        //else if (typeOfFormula != "M" || typeOfFormula != "I")
+            //System.out.println("INVAILD ANSWER");
         
+        switch (typeOfFormula){
+            case "M":
+                System.out.println("Please enter your weight(kg):");
+                double weight_M = input.nextDouble();
+                System.out.println("Please enter your height(m):");
+                double height_M = input.nextDouble();
+                rating = Math.round(weight_M / (height_M * height_M));
+                System.out.println(rating);
+                break;
+            case "I" :
+                System.out.println("Please enter your weight(lbs):");
+                double weight_I = input.nextDouble();
+                System.out.println("Please enter your height(in):");
+                double height_I = input.nextDouble();
+                rating = Math.round((weight_I * 703) / (height_I * height_I));
+                System.out.println(rating); 
+                break;
+            default:
+                System.out.println("INVAILD ANSWER");
+        }
   
 
         //OUTPUT: Finally, depending on the numeber one of these if statements 
@@ -82,6 +102,7 @@ public class BMI {
         else if (rating > 40){
             System.out.println("Your BMI is Morbidly Obese.");
         }
+   
     }
 
 }

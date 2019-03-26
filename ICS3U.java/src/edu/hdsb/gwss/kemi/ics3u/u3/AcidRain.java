@@ -48,7 +48,7 @@ public class AcidRain {
         else if (pH < 6.5){
             acidity = RESULT_ACIDIC;
         }
-        else if (pH >= 6.5 ^ pH <=7.5){
+        else {
             acidity = RESULT_NEUTRAL;
         }
         

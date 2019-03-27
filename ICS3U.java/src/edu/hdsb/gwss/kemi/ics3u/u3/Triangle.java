@@ -25,8 +25,10 @@ public class Triangle {
         //CONSTANTS: N/A
         
         //VARIABLES: N/A
-        double hypoth = 0;
-        
+        double sideLenght1;
+        double sideLenght2;
+        double sideLenght3;
+                
         //SPLASH PAGE: Tells the users the characteristics that make a triangle and a right angle triangle
         System.out.println("TRIANGLES\nThree numbers represent the side lengths "
                 + "\nof a triangle when the sum of any two sides is greater than the third side.");
@@ -37,41 +39,41 @@ public class Triangle {
 
         //INPUT: Asks the user for 3 sides
         System.out.println("Enter side length #1(cm):");
-        double sideLenght1 = input.nextDouble();
+        sideLenght1 = input.nextDouble();
         System.out.println("Enter side length #2(cm):");
-        double sideLenght2 = input.nextDouble();
+        sideLenght2 = input.nextDouble();
         System.out.println("Enter side length #3(cm):");
-        double sideLenght3 = input.nextDouble();
+        sideLenght3 = input.nextDouble();
+        
         
         //PROCESSING & //OUTPUT: Determines if the input can make a triangle and tells the user if so if it can make
         // a right angle triangle 
-        if ((sideLenght1 + sideLenght2) >= sideLenght3 && (sideLenght2 + sideLenght3) >= sideLenght1 && (sideLenght1 + sideLenght3) >= sideLenght2){
+        double sum1 = sideLenght1 + sideLenght2;
+        double sum2 = sideLenght1 + sideLenght3; 
+        double sum3 = sideLenght3 + sideLenght2;
+
+        if (sideLenght3 < sum1 && sideLenght2 < sum2 && sideLenght1 < sum3){
             System.out.println("These sides CAN make a triangle!");
-            if (sideLenght1 > sideLenght2 && sideLenght1 > sideLenght3){
-                hypoth = sideLenght1;
-                if (hypoth == Math.sqrt((sideLenght2 * sideLenght2) + (sideLenght3 * sideLenght3))){
-                    System.out.println("These sides CAN make a RIGHT ANGLE triangle!");
-                }
-            }
-            else if (sideLenght2 > sideLenght1 && sideLenght2 > sideLenght3){
-                hypoth = sideLenght2;
-                if (hypoth == Math.sqrt((sideLenght1 * sideLenght1) + (sideLenght3 * sideLenght3))){
-                    System.out.println("These sides CAN make a RIGHT ANGLE triangle!");
-                }
-            }
-            else if (sideLenght3 > sideLenght2 && sideLenght3 > sideLenght1){
-                hypoth = sideLenght3;
-                if (hypoth == Math.sqrt((sideLenght2 * sideLenght2) + (sideLenght1 * sideLenght1))){
-                    System.out.println("These sides CAN make a RIGHT ANGLE triangle!");
-                }
-            }
-            else if (sideLenght1 > sideLenght2){
-                System.out.println("These sides CANNOT make a RIGHT ANGLE triangle:(");
-            }
         }
-        else if ((sideLenght1 + sideLenght2) < sideLenght3 || (sideLenght2 + sideLenght3) < sideLenght1 || (sideLenght1 + sideLenght3) < sideLenght2) {
-            System.out.println("These sides CANNOT make a triangle:(");
+        else {
+            System.out.println("These sides CANNOT make a triangle;(");
         }
+       
+        if (sideLenght1 == Math.sqrt((sideLenght2 * sideLenght2) + (sideLenght3 * sideLenght3))){
+            System.out.println("These sides CAN make a RIGHT ANGLE triangle!");
+        }
+        else if (sideLenght2 == Math.sqrt((sideLenght1 * sideLenght1) + (sideLenght3 * sideLenght3))){
+            System.out.println("These sides CAN make a RIGHT ANGLE triangle!");
+        }
+        else if (sideLenght3 == Math.sqrt((sideLenght2 * sideLenght2) + (sideLenght1 * sideLenght1))){
+            System.out.println("These sides CAN make a RIGHT ANGLE triangle!");
+        }
+        else {
+            System.out.println("These sides CANNOT make a RIGHT ANGLE triangle:(");
+        }
+    
+        
+        
     }
     
 }

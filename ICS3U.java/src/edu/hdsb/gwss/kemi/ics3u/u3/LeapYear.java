@@ -41,6 +41,9 @@ public class LeapYear {
         else if (year % 4 != 0 ){
             System.out.println("The year " + year + " IS NOT a leap year:(");
         }
+        else if (year != Math.abs(year)){
+            System.out.println("Invalid Year");
+        }
     }
     
 }

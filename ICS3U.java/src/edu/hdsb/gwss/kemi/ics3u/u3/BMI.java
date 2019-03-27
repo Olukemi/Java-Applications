@@ -32,6 +32,7 @@ public class BMI {
                 + "\na person scaled according to their height. BMI is defined as "
                 + "\nthe individual's body weight divided by the square of their height. "
                 + "\nIt is almost always expressed in the unit kg/m2.");
+        System.out.println("------------------------------------------------------------");
         
         //INPUT: One of the input that askes the user which TYPE of measurement they want 
         System.out.println("Enter 'M' for metric or 'I' if you want inmperial measurements:");
@@ -40,26 +41,7 @@ public class BMI {
         //PROCESSING: The different versions of the same code. If the user chose 
         //M or I they have their own formula and code regardless of the number(rating) 
         //the value works on the output below(reasoing to only one rating variable). 
-        //It also askes for weight and height for both formulas
-        //if (typeOfFormula.equals("M")) {
-            //System.out.println("Please enter your weight(kg):");
-            //double weight = input.nextDouble();
-            //System.out.println("Please enter your height(m):");
-            //double height = input.nextDouble();
-            //rating = Math.round(weight / (height * height));
-            //System.out.println(rating);
-        //} 
-        //else if (typeOfFormula.equals("I")) {
-            //System.out.println("Please enter your weight(lbs):");
-            //double weight = input.nextDouble();
-            //System.out.println("Please enter your height(in):");
-            //double height = input.nextDouble();
-            //rating = Math.round((weight * 703) / (height * height));
-            //System.out.println(rating);    
-        //}
-        //else if (typeOfFormula != "M" || typeOfFormula != "I")
-            //System.out.println("INVAILD ANSWER");
-        
+        //It also askes for weight and height for both formula
         switch (typeOfFormula){
             case "M":
                 System.out.println("Please enter your weight(kg):");
@@ -79,30 +61,32 @@ public class BMI {
                 break;
             default:
                 System.out.println("INVAILD ANSWER");
+                break;
         }
-  
-
+        
         //OUTPUT: Finally, depending on the numeber one of these if statements 
         //will output the BMI depending on the users inputs
-        if (rating < 16){
+        if (typeOfFormula.equals("M") || typeOfFormula.equals("I")){
+            if (rating < 16){
             System.out.println("Your BMI is Starvation.");
+            }
+            else if (rating > 16 && rating < 18.5){
+                System.out.println("Your BMI is Underweight.");
+            }
+            else if (rating > 18.5 && rating < 25){
+                System.out.println("Your BMI is Ideal.");
+            }
+            else if (rating > 25 && rating < 30){
+                System.out.println("Your BMI is Overweight.");
+            }
+            else if (rating > 30 && rating < 40){
+                System.out.println("Your BMI is Obese.");
+            }
+            else if (rating > 40){
+                System.out.println("Your BMI is Morbidly Obese.");
+            }
         }
-        else if (rating > 16 && rating < 18.5){
-            System.out.println("Your BMI is Underweight.");
-        }
-        else if (rating > 18.5 && rating < 25){
-            System.out.println("Your BMI is Ideal.");
-        }
-        else if (rating > 25 && rating < 30){
-            System.out.println("Your BMI is Overweight.");
-        }
-        else if (rating > 30 && rating < 40){
-            System.out.println("Your BMI is Obese.");
-        }
-        else if (rating > 40){
-            System.out.println("Your BMI is Morbidly Obese.");
-        }
-   
+         
     }
 
 }

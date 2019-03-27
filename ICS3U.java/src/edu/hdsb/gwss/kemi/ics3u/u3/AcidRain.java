@@ -39,7 +39,7 @@ public class AcidRain {
         double pH = input.nextDouble();
 
         //PROCESSING: The different ranges of pH that depending on input matches one of the lines below
-        if (pH <= 1 || pH >= 10){
+        if (pH <= 2 || pH >= 12){
             acidity = resultInvalid ;
         }
         else if (pH > 7.5){

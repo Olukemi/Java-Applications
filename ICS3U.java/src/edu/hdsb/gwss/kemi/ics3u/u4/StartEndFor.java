@@ -5,12 +5,13 @@
  */
 package edu.hdsb.gwss.kemi.ics3u.u4;
 
+import java.util.Scanner;
+
 /**
  *
  * @author 1ODUJINRIKEM
  */
-import java.util.Scanner;
-public class StartEnd {
+public class StartEndFor {
 
     /**
      * @param args the command line arguments
@@ -28,21 +29,16 @@ public class StartEnd {
         System.out.println("Enter an end value:");
         end = input.nextInt();
         //PROCESSING
-       if (start <= end){
-           do{
-               System.out.print(start + " ");
-               start++;
-           } while (start <= end);
-       }
-       else {
-           do {
-               System.out.print(start + " ");
-               start--;
-           } while(start >=end);
-           
-       }
-        //OUTPUT
-        
+        if (start <=end){
+           for(int i = start, n = end; i <= n; i++){
+            System.out.print(i+ " ");
+           } 
+        } else {
+           for(int i = start, n = end; i >= n; i--){
+            System.out.print(i + " ");
+           } 
+        }
+      
     }
     
 }

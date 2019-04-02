@@ -27,14 +27,20 @@ public class WordEcho {
         //INPUT
         System.out.println("Enter a word:");
         word = input.next();
-        wordLength=word.length();
+        wordLength = word.length();
         characters = wordLength;
         //PROCESSING
-        while (word.length() <= characters){
+       
             System.out.println("The word " + word + " has a lenght of " + characters + " characters");
+            do{
             System.out.print(word + " ");
+            wordLength = 1;
             wordLength++;
-        }
+        } while (wordLength <= characters);
+
+      
+            
+        
         //OUTPUT
     }
     

@@ -23,13 +23,13 @@ public class PictureFramming {
 
         //INPUT
         System.out.println("Enter a value for the length of your picture:");
-        m = 3;//input.nextInt();
+        m = 1;//input.nextInt();
         System.out.println("Enter a value for the width of your picture:");
-        n = 4;//input.nextInt();
+        n = 1;//input.nextInt();
         System.out.println("Enter a value for the width of your mat:");
         p = 1; //input.nextInt();
         System.out.println("Enter a value for the width of your frame:");
-        q = 2; //input.nextInt();
+        q = 1; //input.nextInt();
 
         //PROCESSING
         //TOP
@@ -39,45 +39,72 @@ public class PictureFramming {
             }
             System.out.println("");
         }
-        
+
         for (int r = 0; r < p; r++) {
             // LEFT FRAME
             for (int i = 0; i < (q); i++) {
                 System.out.print("#");
             }
-            
+
             // MATTE
-            for (int i = 0; i < ( 2 * p + n); i++) {
+            for (int i = 0; i < (2 * p + n); i++) {
                 System.out.print("+");
             }
-            
+
             // RIGHT FRAME
             for (int i = 0; i < (q); i++) {
                 System.out.print("#");
             }
             System.out.println("");
         }
-        
-        
-        
-        for (int r = 0; r < p; r++) {
+
+        for (int r = 0; r < m; r++) {
             // LEFT FRAME
             for (int i = 0; i < (q); i++) {
                 System.out.print("#");
             }
-            
-            // MATTE
-            for (int i = 0; i < ( 2 * p + n); i++) {
+
+            // LEFT MATTE
+            for (int i = 0; i < (p); i++) {
                 System.out.print("+");
             }
-            
+
+            // MIDDLE
+            for (int i = 0; i < (n); i++) {
+                System.out.print(".");
+            }
+
+            // RIGHT MATTE
+            for (int i = 0; i < (p); i++) {
+                System.out.print("+");
+            }
+
             // RIGHT FRAME
             for (int i = 0; i < (q); i++) {
                 System.out.print("#");
             }
             System.out.println("");
         }
-        
+
+        for (int r = 0; r < p; r++) {
+            // LEFT FRAME
+            for (int i = 0; i < (q); i++) {
+                System.out.print("#");
+            }
+
+            // MATTE
+            for (int i = 0; i < (2 * p + n); i++) {
+                System.out.print("+");
+            }
+
+            // RIGHT FRAME
+            for (int i = 0; i < (q); i++) {
+                System.out.print("#");
+            }
+            System.out.println("");
+
+        }
+
         //BOTTOM
         for (int r = 0; r < q; r++) {
             for (int i = 0; i < (2 * q + 2 * p + n); i++) {

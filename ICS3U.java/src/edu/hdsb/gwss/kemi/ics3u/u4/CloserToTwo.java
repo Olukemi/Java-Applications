@@ -27,9 +27,9 @@ public class CloserToTwo {
         //INPUT: N/A
         //PROCESSING & OUTPUT : i is the starting value, n is 2
 
-        for(double i = 0, n = 2, a = 1, v = 0; v <= n; i = v){
-           v = i + a;
-           System.out.println(i + "+" + a + "=" + v);
+        for(double num1 = 0, num2 = 1, value = 0; value < 2; num1 = value, num2 = num2 * 2){
+           value = num1 + (1 / num2);
+           System.out.println(num1 + " + 1/" + num2 + " = " + value);
     
         }
         

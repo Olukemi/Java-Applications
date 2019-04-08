@@ -48,8 +48,11 @@ public class CompoundInvesting {
 //        } else {
 //            System.out.println(" ");
 //        }
-        for(double interestRate = 2.5, yearlyInvestment = 1000; years <= 15; years++){
-            System.out.println(years);
+        for(double interest = 0,yearlyInvestment = 100, yearlyAmount = 0, yearlyInterest = 0, total = 0; years <= 3; years++){
+            yearlyAmount = total + yearlyInvestment;
+            interest = yearlyAmount * 0.025;
+            total = yearlyAmount + interest;
+            System.out.println(years + " " + yearlyAmount + " " + interest + " " + total);
         }
 
     }

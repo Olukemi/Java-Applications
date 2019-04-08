@@ -20,6 +20,7 @@ public class CloserToTwo {
     public static void main(String[] args) {
         //CONSTANTS
         //VARIABLES
+        long num2 = 1;
         //SPLASH PAGE
         System.out.println("Closer to Two");
         System.out.println("This program demonstrates that the result of adding the numbers 1, 1/2, 1/4, 1/16, ... \n" +
@@ -27,7 +28,7 @@ public class CloserToTwo {
         //INPUT: N/A
         //PROCESSING & OUTPUT : i is the starting value, n is 2
 
-        for(double num1 = 0, num2 = 1, value = 0; value < 2; num1 = value, num2 = num2 * 2){
+        for(double num1 = 0, value = 0; value < 2; num1 = value, num2 = num2 * 2){
            value = num1 + (1 / num2);
            System.out.println(num1 + " + 1/" + num2 + " = " + value);
     

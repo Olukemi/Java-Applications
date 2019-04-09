@@ -10,6 +10,7 @@ package edu.hdsb.gwss.kemi.ics3u.u4;
  *
  * @author 1ODUJINRIKEM
  */
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class CompoundInvesting {
@@ -19,10 +20,11 @@ public class CompoundInvesting {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        NumberFormat money = NumberFormat.getCurrencyInstance();
         //CONSTANTS
 
         //VARIABLES
-        int yearStart = 1;
+        int year = 1;
         int yearEnd;
         double interest;
         double interestRate;
@@ -45,16 +47,13 @@ public class CompoundInvesting {
         if (interestRate < 0 || yearEnd > 15 || yearEnd < 0 || yearlyInvestment < 0) {
             System.out.println("INVALID INPUT. All input must be greater than 0 and years must be less or equal to 15");
         } else {
-            System.out.print("Year  ");
-            System.out.print("Amount in Account     ");
-            System.out.print("Interest     ");
-            System.out.println("Total   ");
+            System.out.format("%-1s %18s %12s %12s\n", "Year", "Amount in Account", "Interest","Total");
 
-            for (double yearlyAmount = 0, total = 0; yearStart <= yearEnd; yearStart++) {
+            for (double yearlyAmount = 0, total = 0; year <= yearEnd; year++) {
                 yearlyAmount = total + yearlyInvestment;
                 interest = yearlyAmount * (interestRate / 100);
                 total = yearlyAmount + interest;
-                System.out.format("%-1s %14s %16s %10s\n", yearStart, yearlyAmount, interest, total);
+                System.out.format("%-1s %16s %15s %14s\n", year, money.format( yearlyAmount ), money.format (interest), money.format (total));
             }
         }
 

@@ -57,7 +57,7 @@ public class LabAnimals {
             foodSupplyStart = foodSupplyEnd;
             foodSupplyEnd = foodSupplyEnd + 4000;
             populationEnd = populationEnd * 2;
-            System.out.format("%-1s %14s %18s %14s %12s\n", hour, populationStart, foodSupplyStart, foodSupplyEnd, populationEnd);
+            System.out.format("%-2s %14s %18s %14s %12s\n", hour, populationStart, foodSupplyStart, foodSupplyEnd, populationEnd);
         }
 
 

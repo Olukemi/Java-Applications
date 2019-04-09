@@ -4,7 +4,7 @@
  * Version: v0.01
  * Description: Use a loop to demonstrate that the result of adding the numbers 
 1, 1/2, 1/4, 1/8, 1/16, ... and so on gets closer and closer to 2 without becoming 
-2.Your output may look similar to the following:
+
  */
 package edu.hdsb.gwss.kemi.ics3u.u4;
 

@@ -36,7 +36,7 @@ public class SoilErosion {
             year++;
         } while (topsoil <= 30 && newTopsoil >= 10);
         
-        if (year >= 88 && newTopsoil <= 10){
+        if (year >= 87 && newTopsoil <= 10){
             System.out.println("It will take " + year + " years for the soil to erode to a depth such that crops will not grow.");
         }
         

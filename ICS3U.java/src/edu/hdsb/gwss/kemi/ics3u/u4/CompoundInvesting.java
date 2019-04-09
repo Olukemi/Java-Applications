@@ -22,7 +22,11 @@ public class CompoundInvesting {
         //CONSTANTS
 
         //VARIABLES
-        int years = 1;
+        int yearStart = 1;
+        int yearEnd;
+        double interest;
+        double interestRate;
+        double yearlyInvestment;
         //SPLASH PAGE
         System.out.println("Compound Investing\n");
         System.out.println("This program will print out a title table that will display the amount \n"
@@ -30,29 +34,28 @@ public class CompoundInvesting {
 
         //INPUT
         System.out.format("%-16s %6s\n", "Enter the yearly investment ", ":");
-        //yearlyInvestment = input.nextDouble();
+        yearlyInvestment = input.nextDouble();
         System.out.format("%-16s %6s\n", "Enter the interest rate (%)", ":");
-        //interestRate = input.nextDouble();
+        interestRate = input.nextDouble();
         System.out.format("%-16s %6s\n", "Enter the number of years", ":");
-        //years = input.nextDouble();
+        yearEnd = input.nextInt();
         System.out.println(" ");
-        
-        System.out.print("Year  ");
-        System.out.print("Amount in Account     ");
-        System.out.print("Interrest     ");
-        System.out.println("Total   ");
 
         //PROCESSING && OUTPUT
-//        if(interestRate < 0 || years > 15 || years < 0 || yearlyInvestment < 0){
-//            System.out.println("INVALID INPUT. All input must be greater than 0 and years must be less or equal to 15");
-//        } else {
-//            System.out.println(" ");
-//        }
-        for(double interest = 0,yearlyInvestment = 100, yearlyAmount = 0, yearlyInterest = 0, total = 0; years <= 3; years++){
-            yearlyAmount = total + yearlyInvestment;
-            interest = yearlyAmount * 0.025;
-            total = yearlyAmount + interest;
-            System.out.println(years + " " + yearlyAmount + " " + interest + " " + total);
+        if (interestRate < 0 || yearEnd > 15 || yearEnd < 0 || yearlyInvestment < 0) {
+            System.out.println("INVALID INPUT. All input must be greater than 0 and years must be less or equal to 15");
+        } else {
+            System.out.print("Year  ");
+            System.out.print("Amount in Account     ");
+            System.out.print("Interest     ");
+            System.out.println("Total   ");
+
+            for (double yearlyAmount = 0, total = 0; yearStart <= yearEnd; yearStart++) {
+                yearlyAmount = total + yearlyInvestment;
+                interest = yearlyAmount * (interestRate / 100);
+                total = yearlyAmount + interest;
+                System.out.format("%-1s %14s %16s %10s\n", yearStart, yearlyAmount, interest, total);
+            }
         }
 
     }

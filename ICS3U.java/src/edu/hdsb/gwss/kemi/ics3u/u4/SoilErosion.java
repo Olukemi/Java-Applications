@@ -32,7 +32,7 @@ public class SoilErosion {
         //INPUT : N/A
         //PROCESSING && OUTPUT
         while (topsoil >= 10) {
-            topsoil = (topsoil / 1.0125);
+            topsoil = (topsoil / 1.0125) + (2.5 / 400);
             year++;
             System.out.println(year + " " + topsoil);
         }

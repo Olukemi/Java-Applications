@@ -22,11 +22,11 @@ public class LabAnimals {
         //CONSTANTS
 
         //VARIABLES
-        int populationStart = 0;
-        int populationEnd = 10;
-        int foodSupplyStart = 0;
+        int populationStart;
+        int foodSupplyStart;
         int hour = 0;
-        int foodSupplyEnd = 1000;
+        int foodSupplyEnd = 0;
+        int foodPerHour;
 
         //SPLASH PAGE
         System.out.println("Lab Animals\n");
@@ -37,29 +37,34 @@ public class LabAnimals {
 
         //INPUT
         System.out.format("%-16s %10s\n", "Enter the Initial Population  (X)", ":");
-        //population = input.nextInt();
+        populationStart = input.nextInt();
         System.out.format("%-16s %10s\n", "Enter the Initial Food Supply (Y)", ":");
-        //foodSupply = input.nextInt();
+        foodSupplyStart = input.nextInt();
         System.out.format("%-16s %2s\n", "Enter the Amount of Food to Add Each Hour", ":");
-        //foodPerHour = input.nextInt();
+        foodPerHour = input.nextInt();
         System.out.println(" ");
-
+        
+        //PROCESSING & OUTPUT 
         System.out.print("Hour |");
         System.out.print(" Animals at Start |");
         System.out.print(" Food At Start |");
         System.out.print(" Food At End |");
         System.out.println(" Animals At End |");
 
-        //PROCESSING & OUTPUT       
-        while(!(populationEnd >= foodSupplyEnd)){
-            hour++;
-            populationStart = populationEnd;
-            foodSupplyStart = foodSupplyEnd;
-            foodSupplyEnd = foodSupplyEnd + 4000;
-            populationEnd = populationEnd * 2;
-            System.out.format("%-2s %14s %18s %14s %12s\n", hour, populationStart, foodSupplyStart, foodSupplyEnd, populationEnd);
-        }
+        if (populationStart <= 0 || foodSupplyStart <= 0 || foodPerHour <= 0) {
+            System.out.println("INVALID INPUT. All input must be greater than 0");
+        } else {
+            int populationEnd = populationStart;
+            while (populationEnd <= foodSupplyStart) {
+                hour++;
+                populationStart = populationEnd;
+                foodSupplyEnd = (foodSupplyStart + foodPerHour) - populationStart;
+                populationEnd = populationStart * 2;
+                System.out.format("%-2s %14s %18s %14s %12s\n", hour, populationStart, foodSupplyStart, foodSupplyEnd, populationEnd);
+                foodSupplyStart = foodSupplyEnd;
 
+            }
+        }
 
     }
 

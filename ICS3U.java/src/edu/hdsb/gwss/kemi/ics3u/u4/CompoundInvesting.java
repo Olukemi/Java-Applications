@@ -44,7 +44,7 @@ public class CompoundInvesting {
         System.out.println(" ");
 
         //PROCESSING && OUTPUT
-        if (interestRate < 0 || yearEnd > 15 || yearEnd < 0 || yearlyInvestment < 0) {
+        if (interestRate <= 0 || yearEnd > 15 || yearEnd <= 0 || yearlyInvestment <= 0) {
             System.out.println("INVALID INPUT. All input must be greater than 0 and years must be less or equal to 15");
         } else {
             System.out.format("%-1s %18s %12s %12s\n", "Year", "Amount in Account", "Interest","Total");

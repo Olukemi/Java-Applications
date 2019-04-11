@@ -22,25 +22,74 @@ public class Pig {
         Scanner input = new Scanner(System.in);
         //CONSTANTS
         //VARIABLES
-        int die;
+        int userDie;
+        int compDie;
         boolean play = true;
         String quitOrPlay;
+        String rollOrSkip;
         //SPLASH PAGE
         //INPUT: N/A
         //PROCESSING & OUTPUT
-        for (int userScore = 0, compScore = 0, userRoll = 0, compRoll = 0; userScore <= 100 && compScore <= 100;) {
+        userDie = 0;
+        System.out.println("Your score is " + userDie);
+        compDie = 0;
+        System.out.println("The computer's score is " + compDie);
+        for (int userScore = 0, compScore = 0, userRoll = 0; userScore <= 100 && compScore <= 100;) {
             while (play) {
-                die = (int) (Math.random() * 6) + 1;
-                System.out.println(die);
-                if (die != 1) {
-                    userScore = userScore + die;
-                    userRoll++;
-                } else if (die == 1){
+                if (userDie != 1) {
+                    userDie = (int) (Math.random() * 6) + 1;
+                    System.out.println("Your die value is " + userDie);
+                    userScore = userScore + userDie;
+                    System.out.println("Your score is " + userScore);
+                    System.out.println("Would you like to roll again or skip your turn? Enter 'R' for roll "
+                            + "again or 'S' for skip turn");
+                    rollOrSkip = input.next();
+                    if (rollOrSkip == "R") {
+                        userRoll++;
+                        userDie = (int) (Math.random() * 6) + 1;
+                        System.out.println("Your die value is " + userDie);
+                        userScore = userScore + userDie;
+                        System.out.println("Your score is " + userScore);
+                    } 
+                userDie = userDie;  
+                    if (rollOrSkip == "S"){
+                        System.out.println("Do you want to continue playing? Enter 'Y' or 'N'");
+                        quitOrPlay = input.next();
+                        if (quitOrPlay == "Y") {
+                            System.out.println("It is the computer's turn");
+                            for (int compRoll = 0, compRollNumber = (int) (Math.random() * 8) + 3; compRoll >= compRollNumber;) {
+                                compDie = (int) (Math.random() * 6) + 1;
+                                System.out.println("The computer's die value is " + compDie);
+                                compScore = compScore + compDie;
+                                System.out.println("The computer's score " + compScore);
+                            }
+                        } else if (quitOrPlay == "N") {
+                            System.out.println("Thanks for playing!");
+                            play = false;
+                        }
+                    }
+                }
+                if (userDie == 1) {
                     userScore = userScore;
-                    play = false;
+                    System.out.println("Your score is " + userScore);
+                    userDie = 0;
                     System.out.println("Do you want to continue playing? Enter 'Y' or 'N'");
                     quitOrPlay = input.next();
+                    if (quitOrPlay == "Y") {
+                        System.out.println("It is the computer's turn");
+                    } else if (quitOrPlay == "N") {
+                        System.out.println("Thanks for playing!");
+                        play = false;
+                    }
+                    for (int compRoll = 0, compRollNumber = (int) (Math.random() * 8) + 3; compRoll >= compRollNumber;) {
+                        compDie = (int) (Math.random() * 6) + 1;
+                        System.out.println("The computer's die value is " + compDie);
+                        compScore = compScore + compDie;
+                        System.out.println("The computer's score " + compScore);
+                    }
+
                 }
+                userScore = userScore;
             }
         }
 

@@ -1,6 +1,6 @@
 /*
- * Name: Kemi
- * Date: April 5th 2019
+ * Name: Kemi 
+ * Date: April 5th 2019.
  * Version: v0.01
  * Description: This program calculates in time when the soil erosion 
 has been decreased to 10 cm. It print an  output in years.

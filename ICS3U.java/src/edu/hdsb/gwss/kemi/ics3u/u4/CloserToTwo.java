@@ -1,6 +1,6 @@
 /*
  * Name: Kemi
- * Date: April 4th 2019
+ * Date: April 4th 2019.
  * Version: v0.01
  * Description: A loop that demonstratse that the result of adding the numbers 
 1, 1/2, 1/4, 1/8, 1/16, ... and so on gets closer and closer to 2 without becoming 2 

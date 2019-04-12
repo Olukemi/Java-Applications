@@ -1,6 +1,6 @@
 /*
  * Name: Kemi
- * Date: April 6th 2019
+ * Date: April 6th 2019.
  * Version: v0.01
  * Description: This code prints the changes in population and food supply until
 the values meet and the population is greater than the food supply. User input is available.

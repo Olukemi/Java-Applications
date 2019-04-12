@@ -1,6 +1,6 @@
 /*
  * Name: Kemi
- * Date: April 7th 2019
+ * Date: April 7th 2019.
  * Version: v0.01
  * Description: Calculates the investing values over a choosen year period, 
 an interest rate and yearly investments given by the user.

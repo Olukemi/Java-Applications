@@ -41,7 +41,7 @@ public class Pig {
         System.out.println(" ");
 
         //PROCESSING && OUTPUT: The code on a loop that plays the game pig.
-        System.out.println("Do you want to play?");
+        System.out.println("Do you want to play? Enter 'Y' or 'N'");
         quitOrPlay = input.next();
         if (quitOrPlay.equals("N")) {
             System.out.println("That's too bad. Maybe next time.");

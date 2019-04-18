@@ -21,14 +21,24 @@ public class SINCheck {
         Scanner input = new Scanner(System.in);
         //VARIABLES
         String sinNumber = "130692544";
+        int number = 0;
         //SPLASH PAGE 
         //PROCESSING
-        for (int n = 0; n < sinNumber.length();){
-            String numbers = sinNumber.substring(n);
+        for (int n = 1; n < sinNumber.length();) {
+            String evenNumbers = sinNumber.substring(n, n + 1);
+            int evenValue = (Integer.parseInt(evenNumbers)) * 2;
+            number = evenValue + number;
+            System.out.println(evenNumbers + " * 2 = " + evenValue);
             n = n + 2;
-            System.out.println(sinNumber);
         }
+        for (int i = 0; i < sinNumber.length();) {
+            String oddNumbers = sinNumber.substring(i, i + 1);
+            int oddValue = Integer.parseInt(oddNumbers);
+            System.out.println(oddNumbers);
+            i = i + 2;
+        }
+
         //OUTPUT
     }
-    
+
 }

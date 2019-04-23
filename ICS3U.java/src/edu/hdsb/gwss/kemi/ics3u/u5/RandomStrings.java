@@ -21,10 +21,12 @@ public class RandomStrings {
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("RandomStrings.txt");
         PrintWriter output = new PrintWriter(file);
+        
+        
 
-        int str;
+        String str;
         for (int counter = 1; counter <= 100; counter++) {
-            str = (char) ((int) (Math.random() * 26) + 'A');
+            str = char ((int) (Math.random() * 26) + 'A');
             for (int strCounter = 0; strCounter <= 6; strCounter++){
                 output.print(str);
             }

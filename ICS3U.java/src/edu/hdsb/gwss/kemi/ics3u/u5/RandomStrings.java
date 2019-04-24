@@ -26,11 +26,10 @@ public class RandomStrings {
 
         String str;
         for (int counter = 1; counter <= 100; counter++) {
-            str = char ((int) (Math.random() * 26) + 'A');
+//            str = char ((int) (Math.random() * 26) + 'A');
             for (int strCounter = 0; strCounter <= 6; strCounter++){
-                output.print(str);
             }
-            output.println(str);
+            output.println();
         }
 
         output.close();

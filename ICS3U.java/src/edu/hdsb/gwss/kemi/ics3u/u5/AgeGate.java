@@ -27,16 +27,30 @@ public class AgeGate {
         File inFile = new File("DATA11.txt");
         PrintWriter output = new PrintWriter(outFile);
         Scanner input = new Scanner(inFile);
-      
 
         //CONSTANTS
-        //VARIABLES 
+        String birth = input.nextLine();
+        StringTokenizer st = new StringTokenizer(birth, "  ");
+        //VARIABLES
+        int month;
+        int day;
+        int year;
 
-        //PROCESSING
+        //PROCESSING (04 25 2019)
         while (input.hasNext()) {
-            String birth = input.nextLine();
-            StringTokenizer st = new StringTokenizer(birth, "  ");
-            System.out.println(birth);
+            output.println(input.nextLine());
+//            while (st.hasMoreTokens()){
+//                output.println(st.nextToken());
+//            year = Integer.parseInt(st.nextToken(input.nextLine()));
+//            year = 2019 - year;
+//            if (year > 14){
+//                System.out.println("old enough");
+//            } else {
+//                System.out.println("too young");
+//            }
+//            }
+            
+
         }
 
         // Close File

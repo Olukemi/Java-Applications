@@ -1,0 +1,112 @@
+word1 c 
+word2 cvccvcvcvcc 
+c 
+word2 cvccvcvcvcc 
+v 
+word2 cvccvcvcvcc 
+c 
+word2 cvccvcvcvcc 
+c 
+word2 cvccvcvcvcc 
+v 
+word2 cvccvcvcvcc 
+c 
+word2 cvccvcvcvcc 
+v 
+word2 cvccvcvcvcc 
+c 
+word2 cvccvcvcvcc 
+v 
+word2 cvccvcvcvcc 
+c 
+word2 cvccvcvcvcc 
+c 
+word2 cvccvcvcvcc 
+word1 c 
+word2 ccvcc 
+v 
+word2 ccvcc 
+c 
+word2 ccvcc 
+c 
+word2 ccvcc 
+v 
+word2 ccvcc 
+c 
+word2 ccvcc 
+word1 c 
+word2 cvcvccvv 
+v 
+word2 cvcvccvv 
+c 
+word2 cvcvccvv 
+v 
+word2 cvcvccvv 
+c 
+word2 cvcvccvv 
+c 
+word2 cvcvccvv 
+v 
+word2 cvcvccvv 
+v 
+word2 cvcvccvv 
+word1 v 
+word2 vccvccvcv 
+c 
+word2 vccvccvcv 
+c 
+word2 vccvccvcv 
+v 
+word2 vccvccvcv 
+c 
+word2 vccvccvcv 
+c 
+word2 vccvccvcv 
+v 
+word2 vccvccvcv 
+v 
+word2 vccvccvcv 
+c 
+word2 vccvccvcv 
+word1 v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 
+v 
+word2 vvvvvvvvvvvvvvvvvvvvv 

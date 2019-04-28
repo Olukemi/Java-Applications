@@ -1,8 +1,9 @@
 /*
  * Name: Kemi
- * Date: April 25th 2019
- * Version: v.0.01
- * Decription:
+ * Date: April 25th 2019.
+ * Version: v0.01
+ * Decription: This program takes birth dates of students from a file and then determines 
+wheteher the birth dates of these students makes them old enough for a constest or too young.
  */
 package edu.hdsb.gwss.kemi.ics3u.u5;
 
@@ -22,39 +23,44 @@ public class AgeGate {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-        //OBJECTS
+        //OBJECTS: These are used to create, read and communicate data through input and output files
         File outFile = new File("OUT11.txt");
         File inFile = new File("DATA11.txt");
         PrintWriter output = new PrintWriter(outFile);
         Scanner input = new Scanner(inFile);
 
-        //CONSTANTS
-        String birth = input.nextLine();
-        StringTokenizer st = new StringTokenizer(birth, "  ");
-        //VARIABLES
+        //CONSTANTS: Variable for a constant string from DATA11.txt named birth
+//        String birth = input.nextLine();
+
+        //VARIABLES: These are variables for the birth date inputs
         int month;
         int day;
         int year;
+        
+        //INPUT: N/A
 
-        //PROCESSING (04 25 2019)
+        //PROCESSING && OUTPUT: The input was tokenized and then turned to integers that can be compared in an
+        //if else statement and is print an output that determines if the students are old enough of too young
         while (input.hasNext()) {
-            output.println(input.nextLine());
-//            while (st.hasMoreTokens()){
-//                output.println(st.nextToken());
-//            year = Integer.parseInt(st.nextToken(input.nextLine()));
-//            year = 2019 - year;
-//            if (year > 14){
-//                System.out.println("old enough");
-//            } else {
-//                System.out.println("too young");
-//            }
-//            }
-            
+            StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
+            while (st.hasMoreTokens()) {
+                month = Integer.parseInt(st.nextToken());
+                day = Integer.parseInt(st.nextToken());
+                year = Integer.parseInt(st.nextToken());
+                year = 2019 - year;
+                if (year == 14 && day > 25 ) {
+                    output.println("too young");
+                } else if (year >= 14 && day <= 25){
+                    output.println("old enough");
+                } else {
+                    output.println("too young");
+                }
+            }
 
         }
 
-        // Close File
-        input.close();
+        // CLOSING FILE: This tells the program that the file is complete and can process any actions
+        output.close();
 
         //OUTPUT
     }

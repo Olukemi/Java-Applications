@@ -2,7 +2,7 @@
  * Name: Kemi
  * Date: April 28th 2019
  * Version: v.0.01
- * Decription
+ * Decription:
  */
 package edu.hdsb.gwss.kemi.ics3u.u5;
 
@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -22,17 +23,31 @@ public class Arablish {
      */
     public static void main(String[] args) throws FileNotFoundException {
         //OBJECTS
-        File file = new File("OUT11.txt");
-        PrintWriter output = new PrintWriter( file );
-        Scanner input = new Scanner("DATA11.txt");
-                
+        File outFile = new File("OUT31.txt");
+        File inFile = new File("DATA31.txt");
+        PrintWriter output = new PrintWriter(outFile);
+        Scanner input = new Scanner(inFile);
+
         //CONSTANTS
-        //VARIABLES 
-        
-        //PROCESSING
-        
-        //OUTPUT
-        
+        //VARIABLES
+        //PROCESSING && OUTPUT:
+        while (input.hasNext()) {
+            StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
+            int numberOfTokens = st.countTokens();
+            while (st.hasMoreTokens()) {
+                String word = st.nextToken();
+                String reverse = "";
+                for (int i = word.length() - 1; i >= 0; i--) {
+                    reverse = reverse + word.charAt(i);
+                }
+                String reverseWord = reverse + " ";
+                System.out.println(reverseWord);
+            }
+        }
+
+        //CLOSING 
+        output.close();
+
     }
-    
+
 }

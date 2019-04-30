@@ -2,7 +2,8 @@
  * Name: Kemi
  * Date: April 28th 2019.
  * Version: v0.01
- * Decription:
+ * Decription: This programs tells the user if the two words or strings in a line are the same pattern through their
+vowel and constanant order.
  */
 package edu.hdsb.gwss.kemi.ics3u.u5;
 
@@ -29,7 +30,6 @@ public class PatternMatching {
         Scanner input = new Scanner(inFile);
 
         //CONSTANTS:
-//        String phrase = input.next();
         //VARIABLES:
         String word1;
         String word2;
@@ -40,27 +40,33 @@ public class PatternMatching {
             while (st.hasMoreTokens()) {
                 word1 = st.nextToken();
                 word2 = st.nextToken();
-                int i = 0;
-                char character1 = word1.charAt(i);
-                char character2 = word2.charAt(i);
-                for (; i < word1.length(); i++) {
-                    character1 = word1.charAt(i);
+                String pattern1 = "";
+                System.out.print("word1 ");
+                for (int i = 0; i < word1.length(); i++) {
+                    char character1 = word1.charAt(i);
                     if (character1 == 'a' || character1 == 'e' || character1 == 'i' || character1 == 'o' || character1 == 'u') {
                         character1 = 'v';
+                        pattern1 = pattern1 + character1;
                     } else {
                         character1 = 'c';
-                    }
-                    character2 = word2.charAt(i);
-                    if (character2 == 'a' || character2 == 'e' || character2 == 'i' || character2 == 'o' || character2 == 'u') {
-                        character2 = 'v';
-                    } else {
-                        character2 = 'c';
+                        pattern1 = pattern1 + character1;
                     }
                 }
-                String pattern1 = character1 + "";
-                String pattern2 = character2 + "";
-                output.print("word1" + pattern1);
-                System.out.print("word2" + pattern2);
+                System.out.print(pattern1);
+                String pattern2 = "";
+                System.out.print(" word2 ");
+                for (int n = 0; n < word2.length(); n++) {
+                    char character2 = word2.charAt(n);
+                    if (character2 == 'a' || character2 == 'e' || character2 == 'i' || character2 == 'o' || character2 == 'u') {
+                        character2 = 'v';
+                        pattern2 = pattern2 + character2;
+                    } else {
+                        character2 = 'c';
+                        pattern2 = pattern2 + character2;
+                    }
+                }
+                System.out.print(pattern2);
+                System.out.println(" ");
                 if (pattern1.equals(pattern2)) {
                     output.println(" same ");
                 } else {

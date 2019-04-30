@@ -31,7 +31,7 @@ public class Arablish {
         //CONSTANTS
         //VARIABLES
         //PROCESSING && OUTPUT:
-        while (input.hasNext()) {
+        while (input.hasNextLine()) {
             StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
             int numberOfTokens = st.countTokens();
             while (st.hasMoreTokens()) {

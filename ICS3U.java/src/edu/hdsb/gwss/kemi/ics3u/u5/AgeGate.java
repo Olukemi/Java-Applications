@@ -1,6 +1,6 @@
 /*
  * Name: Kemi
- * Date: April 25th 2019.
+ * Date: April 25th 2019
  * Version: v0.01
  * Decription: This program takes birth dates of students from a file and then determines 
 wheteher the birth dates of these students makes them old enough for a constest or too young.

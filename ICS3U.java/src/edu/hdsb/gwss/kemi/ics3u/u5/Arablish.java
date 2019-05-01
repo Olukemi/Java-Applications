@@ -39,21 +39,23 @@ public class Arablish {
                 String word = st.nextToken();
                 String reverseWord = "";
                 String reverse = "";
+                boolean ifNum;
                 for (int i = word.length() - 1; i >= 0; i--) {
                     reverse = reverse + word.charAt(i);
                     reverseWord = reverse + " ";
                     // This piece of code below accounts for the numbers that don't need to be rearranged/reversed. I have tried very hard
                     //to solve for it and I can't seem to get it, so this code works but without this part of code. Thank you.
-//                    for (int n = 0, counter = 0; n <= word.length(); n++) {
-//                        if (word.charAt(n) == '9' || word.charAt(n) == '8' || word.charAt(n) == '7' || word.charAt(n) == '6'
-//                                || word.charAt(n) == '5' || word.charAt(n) == '4' || word.charAt(n) == '3' || word.charAt(n) == '2'
-//                                || word.charAt(n) == '1' || word.charAt(n) == '0') {
-//                            counter++;
-//                        }
-//                        if (counter == word.length()) {
-//                            reverseWord = word;
-//                        }
-//                    }
+                    for (int n = 0, counter = 0; n <= word.length(); n++) {
+                        if (word.codePointAt(n) >= 48 && word.codePointAt(n) <= 57) {
+                            ifNum = true;
+                            counter++;
+                        } else {
+                            ifNum = false;
+                        }
+                        if (counter == word.length()) {
+                            reverseWord = word;
+                        }
+                    }
                 }
                 reverseLine = reverseWord + " " + reverseLine;
             }

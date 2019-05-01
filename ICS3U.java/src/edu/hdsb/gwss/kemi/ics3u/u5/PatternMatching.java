@@ -34,8 +34,6 @@ public class PatternMatching {
         //VARIABLES: These variables are holders for where changes string in the file are stored and that can later be altered.
         String word1;
         String word2;
-        String pattern1 = "";
-        String pattern2 = "";
         
         //INPUT: N/A
         
@@ -45,6 +43,7 @@ public class PatternMatching {
             while (st.hasMoreTokens()) {
                 word1 = st.nextToken();
                 word2 = st.nextToken();
+                String pattern1 = "";
                 System.out.print("word1 ");
                 for (int i = 0; i < word1.length(); i++) {
                     char character1 = word1.charAt(i);
@@ -57,6 +56,7 @@ public class PatternMatching {
                     }
                 }
                 System.out.print(pattern1);
+                String pattern2 = "";
                 System.out.print(" word2 ");
                 for (int n = 0; n < word2.length(); n++) {
                     char character2 = word2.charAt(n);

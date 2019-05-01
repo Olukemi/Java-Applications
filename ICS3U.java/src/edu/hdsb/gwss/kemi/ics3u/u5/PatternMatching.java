@@ -23,7 +23,7 @@ public class PatternMatching {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-        //OBJECT: These are used to create, read and communicate data through input and output files.
+        //OBJECTS: These are used to create, read and communicate data through input and output files.
         File outFile = new File("OUT21.txt");
         File inFile = new File("DATA21.txt");
         PrintWriter output = new PrintWriter(outFile);
@@ -78,7 +78,7 @@ public class PatternMatching {
 
             }
         }
-        //CLOSING FILE This tells the program that the file is complete and can process any actions.
+        //CLOSING FILE: This tells the program that the file is complete and can process any actions.
         output.close();
     }
 

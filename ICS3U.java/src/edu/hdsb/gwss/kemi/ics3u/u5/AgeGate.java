@@ -1,6 +1,6 @@
 /*
  * Name: Kemi
- * Date: April 25th 2019
+ * Date: April 25th 2019.
  * Version: v0.01
  * Decription: This program takes birth dates of students from a file and then determines 
 wheteher the birth dates of these students makes them old enough for a constest or too young.
@@ -29,20 +29,21 @@ public class AgeGate {
         PrintWriter output = new PrintWriter(outFile);
         Scanner input = new Scanner(inFile);
 
-        //CONSTANTS: Variable for a constant string from DATA11.txt named birth.
-//        String birth = input.nextLine();
+        //CONSTANTS: N/A
 
         //VARIABLES: These are variables for the birth date inputs.
         int month;
         int day;
         int year;
-        
+        String birthDate;
+
         //INPUT: N/A
 
         //PROCESSING && OUTPUT: The input was tokenized and then turned to integers that can be compared in an
         //if else statement and is print an output that determines if the students are old enough of too young.
         while (input.hasNext()) {
-            StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
+            birthDate = input.nextLine();
+            StringTokenizer st = new StringTokenizer(birthDate, "  ");
             while (st.hasMoreTokens()) {
                 month = Integer.parseInt(st.nextToken());
                 day = Integer.parseInt(st.nextToken());

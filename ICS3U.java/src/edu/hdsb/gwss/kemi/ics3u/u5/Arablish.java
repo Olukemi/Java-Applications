@@ -29,7 +29,9 @@ public class Arablish {
         Scanner input = new Scanner(inFile);
 
         //CONSTANTS: N/A
+        
         //VARIABLES: N/A (They are in processing and they cannot move because it ruins the code).
+        
         //PROCESSING && OUTPUT: Reverses the words' order and their letters but keeps the number string as they are.
         while (input.hasNextLine()) {
             StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
@@ -40,21 +42,16 @@ public class Arablish {
                 String reverseWord = "";
                 String reverse = "";
                 boolean ifNum;
+                int counter = 0;
                 for (int i = word.length() - 1; i >= 0; i--) {
-                    reverse = reverse + word.charAt(i);
-                    reverseWord = reverse + " ";
-                    // This piece of code below accounts for the numbers that don't need to be rearranged/reversed. I have tried very hard
-                    //to solve for it and I can't seem to get it, so this code works but without this part of code. Thank you.
-                    for (int n = 0, counter = 0; n <= word.length(); n++) {
-                        if (word.codePointAt(n) >= 48 && word.codePointAt(n) <= 57) {
-                            ifNum = true;
-                            counter++;
-                        } else {
-                            ifNum = false;
-                        }
-                        if (counter == word.length()) {
-                            reverseWord = word;
-                        }
+                    if ((word.codePointAt(i) >= 48) && (word.codePointAt(i) <= 57)) {
+                        counter++;
+                    }
+                    if (counter == word.length()) {
+                        reverseWord = word;
+                    } else {
+                        reverse = reverse + word.charAt(i);
+                        reverseWord = reverse + " ";
                     }
                 }
                 reverseLine = reverseWord + " " + reverseLine;

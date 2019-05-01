@@ -3,7 +3,7 @@
  * Date: April 28th 2019.
  * Version: v0.01
  * Decription: This programs tells the user if the two words or strings in a line are the same pattern through their
-vowel and constanant order.
+vowel and consonant order.
  */
 package edu.hdsb.gwss.kemi.ics3u.u5;
 
@@ -23,24 +23,28 @@ public class PatternMatching {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-        //OBJECT: 
+        //OBJECT: These are used to create, read and communicate data through input and output files.
         File outFile = new File("OUT21.txt");
         File inFile = new File("DATA21.txt");
         PrintWriter output = new PrintWriter(outFile);
         Scanner input = new Scanner(inFile);
 
-        //CONSTANTS:
-        //VARIABLES:
+        //CONSTANTS: N/A
+        
+        //VARIABLES: These variables are holders for where changes string in the file are stored and that can later be altered.
         String word1;
         String word2;
+        String pattern1 = "";
+        String pattern2 = "";
+        
         //INPUT: N/A
-        //PROCESSING && OUTPUT:
+        
+        //PROCESSING && OUTPUT: Reads then converts letters into c and v (consonants and vowels) then compares the two strings.
         while (input.hasNext()) {
-            StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
+            StringTokenizer st = new StringTokenizer(input.nextLine(), " ");
             while (st.hasMoreTokens()) {
                 word1 = st.nextToken();
                 word2 = st.nextToken();
-                String pattern1 = "";
                 System.out.print("word1 ");
                 for (int i = 0; i < word1.length(); i++) {
                     char character1 = word1.charAt(i);
@@ -53,7 +57,6 @@ public class PatternMatching {
                     }
                 }
                 System.out.print(pattern1);
-                String pattern2 = "";
                 System.out.print(" word2 ");
                 for (int n = 0; n < word2.length(); n++) {
                     char character2 = word2.charAt(n);

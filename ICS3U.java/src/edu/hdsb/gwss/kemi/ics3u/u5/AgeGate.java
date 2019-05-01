@@ -23,16 +23,16 @@ public class AgeGate {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-        //OBJECTS: These are used to create, read and communicate data through input and output files
+        //OBJECTS: These are used to create, read and communicate data through input and output files.
         File outFile = new File("OUT11.txt");
         File inFile = new File("DATA11.txt");
         PrintWriter output = new PrintWriter(outFile);
         Scanner input = new Scanner(inFile);
 
-        //CONSTANTS: Variable for a constant string from DATA11.txt named birth
+        //CONSTANTS: Variable for a constant string from DATA11.txt named birth.
 //        String birth = input.nextLine();
 
-        //VARIABLES: These are variables for the birth date inputs
+        //VARIABLES: These are variables for the birth date inputs.
         int month;
         int day;
         int year;
@@ -40,7 +40,7 @@ public class AgeGate {
         //INPUT: N/A
 
         //PROCESSING && OUTPUT: The input was tokenized and then turned to integers that can be compared in an
-        //if else statement and is print an output that determines if the students are old enough of too young
+        //if else statement and is print an output that determines if the students are old enough of too young.
         while (input.hasNext()) {
             StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
             while (st.hasMoreTokens()) {
@@ -59,10 +59,9 @@ public class AgeGate {
 
         }
 
-        // CLOSING FILE: This tells the program that the file is complete and can process any actions
+        // CLOSING FILE: This tells the program that the file is complete and can process any actions.
         output.close();
 
-        //OUTPUT
     }
 
 }

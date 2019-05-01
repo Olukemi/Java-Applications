@@ -16,8 +16,7 @@ public class Practice {
      */
     public static void main(String[] args) {
         String s = "  ABC123XYZ789ABC123XYZ89  ";
-        String t = "ABB23";
-        
+        String t = "ABB23";       
         System.out.println(s.substring(4));
         System.out.println(s.toLowerCase());
         System.out.println(s.trim());
@@ -27,9 +26,8 @@ public class Practice {
         System.out.println(s.replaceAll( "ABC", "abc"));
         System.out.println(s.lastIndexOf("9"));
         System.out.println(s.indexOf("fdas"));
+        System.out.println(s.codePointAt(3));
         
-        int x = (int) (Math.random() * 10) + 2;
-        System.out.println(x);
                 
           
     }

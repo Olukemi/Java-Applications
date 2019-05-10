@@ -1,8 +1,8 @@
 /*
  * Name: Kemi
- * Date: May 9th 2019.
+ * Date: May 9th 2019
  * Version: v0.01
- * Description: This program that converts any number from 10 to 99 from its digit representation to its word representation. 
+ * Description: This program will convert any number from 1 to 999 to its word representation.
  */
 package edu.hdsb.gwss.kemi.ics3u.u6;
 
@@ -10,17 +10,16 @@ import java.util.Scanner;
 
 /**
  *
- * @author 1ODUJINRIKEM
+ * @author kemij
  */
-public class NumbersToWords {
+public class NumbersToWords2 {
 
     /**
      * @param args the command line arguments
      */
-    //This asks for user number input.
     public static void inputNum(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a number between 10 and 99:");
+        System.out.println("Enter a number between 1 and 999:");
         num = input.nextInt();
     }
     // Accounts for any number that is divisable by 10.
@@ -82,6 +81,13 @@ public class NumbersToWords {
             System.out.println("TEEN");
         }
     }
+    
+    public static void hundreds(){
+        int x = num % 100;
+        if (x >= 1){
+            System.out.println("HUNDRED");
+        }
+    }
     // Global variable can be used anywhere in the entire code
     public static int num;
     // Depending on the type of numeber, they use different method(s) to make a specific number in its relation to the number 10
@@ -94,11 +100,20 @@ public class NumbersToWords {
             teens();
         }else if (num == 11 || num ==12) {
             teens();
+        }else if (num > 112 || num <119) {
+            hundreds();
+            teens();
+        }else if (num % 100 > 0 && ((num % 100) % 10 == 0)) {
+            hundreds();
+            tens();
+        }else if (num % 100 > 1 && num % 100 < 9) {
+            hundreds();
+            ones();
         }else {
             tens();
             ones();
         }
         
     }
-
+    
 }

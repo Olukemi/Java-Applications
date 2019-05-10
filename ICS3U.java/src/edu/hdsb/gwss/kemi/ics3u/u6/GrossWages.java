@@ -16,25 +16,25 @@ public class GrossWages {
     /**
      * @param args the command line arguments
      */
-    public static void hoursAndWage() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the number of hours worked: ");
-        hours = input.nextDouble();
+        double hours = input.nextDouble();
         System.out.println("Please enter the hourly wage:");
-        wage = input.nextDouble();
+        double wage = input.nextDouble();
+        hoursAndWage( hours, wage);
 
     }
 
-    public static double hours, wage, grossWage;
 
-    public static void main(String[] args) {
-        hoursAndWage();
+    public static void hoursAndWage(double a, double b) {
         double remainingHours;
-        if (hours > 40){
-            remainingHours = hours - 40;
+        double grossWage;
+        if (a > 40){
+            remainingHours = a - 40;
             grossWage = (40 * 10) + (remainingHours * 1.5 * 10);
         } else {
-            grossWage = hours * 10;
+            grossWage = a * 10;
         }
         System.out.println("Gross Wage: $" + grossWage);
         

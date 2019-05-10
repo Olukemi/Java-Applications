@@ -74,18 +74,18 @@ public class NumbersToWords2 {
     public static void teens() {
         int x = num % 10;
         if (x == 1){
-            System.out.println("ELEVEN");
+            System.out.print("ELEVEN");
         }else if (x == 2){
-            System.out.println("TWELVE");
+            System.out.print("TWELVE");
         }else {
-            System.out.println("TEEN");
+            System.out.print("TEEN");
         }
     }
     
     public static void hundreds(){
         int x = num % 100;
         if (x >= 1){
-            System.out.println("HUNDRED");
+            System.out.println(" HUNDRED");
         }
     }
     // Global variable can be used anywhere in the entire code
@@ -100,13 +100,16 @@ public class NumbersToWords2 {
             teens();
         }else if (num == 11 || num ==12) {
             teens();
-        }else if (num > 112 || num <119) {
+        }else if (num > 112 && num <119) {
+            ones();
             hundreds();
             teens();
         }else if (num % 100 > 0 && ((num % 100) % 10 == 0)) {
+            ones();
             hundreds();
             tens();
         }else if (num % 100 > 1 && num % 100 < 9) {
+            ones();
             hundreds();
             ones();
         }else {

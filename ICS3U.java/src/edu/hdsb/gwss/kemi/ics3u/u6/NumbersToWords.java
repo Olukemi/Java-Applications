@@ -78,6 +78,10 @@ public class NumbersToWords {
             System.out.println("ELEVEN");
         }else if (x == 2){
             System.out.println("TWELVE");
+        }else if (x == 2){
+            System.out.println("THIRTEEBN");
+        }else if (x == 2){
+            System.out.println("FIFTEEN");
         }else {
             System.out.println("TEEN");
         }

@@ -1,8 +1,7 @@
 /*
- * Name: Kemi
- * Date: May 9th 2019
- * Version: v0.01
- * Description: This program will convert any number from 1 to 999 to its word representation.
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package edu.hdsb.gwss.kemi.ics3u.u6;
 
@@ -17,106 +16,156 @@ public class NumbersToWords2 {
     /**
      * @param args the command line arguments
      */
-    public static void inputNum(){
+    public static void inputNum() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a number between 1 and 999:");
         num = input.nextInt();
     }
-    // Accounts for any number that is divisable by 10.
-    public static void tens() {
-        int x = num / 10;
-        
-        if (x == 2){
-            System.out.print("TWENTY ");
-        }else if (x == 3){
-            System.out.print("THIRTY ");
-        }else if (x == 4){
-            System.out.print("FORTY ");
-        }else if (x == 5){
-            System.out.print("FIFTY ");
-        }else if (x == 6){
-            System.out.print("SIXTY ");
-        }else if (x == 7){
-            System.out.print("SEVENTY ");
-        }else if (x == 8){
-            System.out.print("EIGHTY ");
-        }else if (x == 9){
-            System.out.print("NINETY ");
-        } else if (x == 1){
-            System.out.println("TEN");
-        }
-    }
-    //Accounts for any number that is between 1 and 9
-    public static void ones() {
-        int x = num % 10;
-        if (x == 1){
-            System.out.print("0NE");
-        }else if (x == 2){
-            System.out.print("TW0");
-        }else if (x == 3){
-            System.out.print("THREE");
-        }else if (x == 4){
-            System.out.print("FOUR");
-        }else if (x == 5){
-            System.out.print("FIVE");
-        }else if (x == 6){
-            System.out.print("SIX");
-        }else if (x == 7){
-            System.out.print("SEVEN");
-        }else if (x == 8){
-            System.out.print("EIGHT");
-        }else if (x == 9){
-            System.out.print("NINE");
-        }
-        
-    }
-    // Accounts for numbers between 11 and 19
-    public static void teens() {
-        int x = num % 10;
-        if (x == 1){
-            System.out.print("ELEVEN");
-        }else if (x == 2){
-            System.out.print("TWELVE");
-        }else {
-            System.out.print("TEEN");
-        }
-    }
-    
-    public static void hundreds(){
-        int x = num % 100;
-        if (x >= 1){
+
+    public static void hundreds() {
+        int x = num / 100;
+        if (x > 1) {
             System.out.println(" HUNDRED");
         }
     }
-    // Global variable can be used anywhere in the entire code
+
+    public static void tens() {
+        int x = num / 10;
+        switch (x) {
+            case 1:
+                System.out.print("TEN ");
+                break;
+            case 2:
+                System.out.print("TWENTY ");
+                break;
+            case 3:
+                System.out.print("THIRTY ");
+                break;
+            case 4:
+                System.out.print("FORTY ");
+                break;
+            case 5:
+                System.out.print("FIFTY ");
+                break;
+            case 6:
+                System.out.print("SIXTY ");
+                break;
+            case 7:
+                System.out.print("SEVENTY ");
+                break;
+            case 8:
+                System.out.print("EIGHTY ");
+                break;
+            case 9:
+                System.out.print("NINETY ");
+                break;
+        }
+    }
+
+    public static void ones() {
+        int x;
+        if (num < 100) {
+            x = num % 10;
+        } else {
+            x = num / 100;
+        }
+        switch (x) {
+            case 1:
+                System.out.print("ONE");
+                break;
+            case 2:
+                System.out.print("TWO");
+                break;
+            case 3:
+                System.out.print("THREE");
+                break;
+            case 4:
+                System.out.print("FOUR");
+                break;
+            case 5:
+                System.out.print("FIVE");
+                break;
+            case 6:
+                System.out.print("SIX");
+                break;
+            case 7:
+                System.out.print("SEVEN");
+                break;
+            case 8:
+                System.out.print("EIGHT");
+                break;
+            case 9:
+                System.out.print("NINE");
+                break;
+        }
+
+    }
+
+    public static void teens() {
+        int x = num % 10;
+        switch (x) {
+            case 1:
+                System.out.println("ELEVEN");
+                break;
+            case 2:
+                System.out.println("TWELVE");
+                break;
+            case 3:
+                System.out.println("THIRTEEN");
+                break;
+            case 5:
+                System.out.println("FIFTEEN");
+                break;
+            default:
+                System.out.print("TEEN");
+        }
+
+    }
     public static int num;
-    // Depending on the type of numeber, they use different method(s) to make a specific number in its relation to the number 10
+
     public static void main(String[] args) {
         inputNum();
-        if(num % 10 == 0){
+        if (num % 10 == 0) {
             tens();
-        } else if (num > 12 && num <= 19){
-            ones();
-            teens();
-        }else if (num == 11 || num ==12) {
-            teens();
-        }else if (num > 112 && num <119) {
+        } else if (num % 100 == 0) {
             ones();
             hundreds();
+        } else if (num > 12 && num <= 19 && num != 13 && num != 15) {
+            ones();
             teens();
-        }else if (num % 100 > 0 && ((num % 100) % 10 == 0)) {
+        } else if (num == 11 || num == 12 || num == 13 || num == 15) {
+            teens();
+        } else if (num % 100 > 0 && ((num % 100) % 10 == 0)) {
             ones();
             hundreds();
             tens();
-        }else if (num % 100 > 1 && num % 100 < 9) {
+        } else if (num > 112 && num < 119 && num != 113 && num != 115) {
             ones();
             hundreds();
             ones();
-        }else {
+            teens();
+        } else if (num == 111 || num == 112 || num == 113 || num == 115) {
+            hundreds();
+            teens();
+        } else if (num < 10 && num > 0) {
+            ones();
+        } else if (num % 100 > 1 && num % 100 < 9) {
+            ones();
+            hundreds();
+            ones();
+        } else if (num < 1 || num > 999) {
+            System.out.println("INVAILD NUMBER");
+        } else if (num / 100 < 1){
             tens();
             ones();
+        } else {
+            ones();
+            hundreds();
+            tens();
+            ones();
+            
         }
-        
+
     }
-    
+
 }

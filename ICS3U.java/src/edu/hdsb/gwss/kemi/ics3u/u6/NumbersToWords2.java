@@ -24,13 +24,18 @@ public class NumbersToWords2 {
 
     public static void hundreds() {
         int x = num / 100;
-        if (x > 1) {
-            System.out.println(" HUNDRED");
+        if (x >= 1) {
+            System.out.print(" HUNDRED ");
         }
     }
 
     public static void tens() {
-        int x = num / 10;
+        int x;
+        if (num < 100) {
+            x = num / 10;
+        } else {
+            x = (num % 100) / 10;
+        }
         switch (x) {
             case 1:
                 System.out.print("TEN ");
@@ -63,12 +68,15 @@ public class NumbersToWords2 {
     }
 
     public static void ones() {
-        int x;
+        int x = 0;
+        int y = num % 100;
         if (num < 100) {
             x = num % 10;
-        } else {
+        } else if ( num / 100 >= 1) {
             x = num / 100;
-        }
+        } else {
+            x = num % 100;
+        } 
         switch (x) {
             case 1:
                 System.out.print("ONE");
@@ -105,16 +113,16 @@ public class NumbersToWords2 {
         int x = num % 10;
         switch (x) {
             case 1:
-                System.out.println("ELEVEN");
+                System.out.print("ELEVEN");
                 break;
             case 2:
-                System.out.println("TWELVE");
+                System.out.print("TWELVE");
                 break;
             case 3:
-                System.out.println("THIRTEEN");
+                System.out.print("THIRTEEN");
                 break;
             case 5:
-                System.out.println("FIFTEEN");
+                System.out.print("FIFTEEN");
                 break;
             default:
                 System.out.print("TEEN");
@@ -125,47 +133,53 @@ public class NumbersToWords2 {
 
     public static void main(String[] args) {
         inputNum();
-        if (num % 10 == 0) {
-            tens();
-        } else if (num % 100 == 0) {
-            ones();
-            hundreds();
-        } else if (num > 12 && num <= 19 && num != 13 && num != 15) {
-            ones();
-            teens();
-        } else if (num == 11 || num == 12 || num == 13 || num == 15) {
-            teens();
-        } else if (num % 100 > 0 && ((num % 100) % 10 == 0)) {
-            ones();
-            hundreds();
-            tens();
-        } else if (num > 112 && num < 119 && num != 113 && num != 115) {
-            ones();
-            hundreds();
-            ones();
-            teens();
-        } else if (num == 111 || num == 112 || num == 113 || num == 115) {
-            hundreds();
-            teens();
-        } else if (num < 10 && num > 0) {
-            ones();
-        } else if (num % 100 > 1 && num % 100 < 9) {
-            ones();
-            hundreds();
-            ones();
+        if (num >= 1 && num <= 99) {
+            if (num % 10 == 0) {
+                tens();
+            } else if (num > 12 && num <= 19 && num != 13 && num != 15) {
+                ones();
+                teens();
+            } else if (num == 11 || num == 12 || num == 13 || num == 15) {
+                teens();
+            } else if (num < 10 && num > 0) {
+                ones();
+            } else if (num / 100 < 1) {
+                tens();
+                ones();
+            }
+        } else if (num >= 100 && num <= 999) {
+            if (num % 100 == 0) {
+                ones();
+                hundreds();
+            } else if (num > 112 && num < 119 && num != 113 && num != 115) {
+                ones();
+                hundreds();
+                ones();
+                teens();
+            } else if (num % 100 > 0 && ((num % 100) % 10 == 0)) {
+                ones();
+                hundreds();
+                tens();
+            } else if (num == 111 || num == 112 || num == 113 || num == 115) {
+                ones();
+                hundreds();
+                teens();
+            } else if (num % 100 > 1 && num % 100 < 9) {
+                ones();
+                hundreds();
+                ones();
+            } else {
+                ones();
+                hundreds();
+                tens();
+                ones();
+
+            }
+
         } else if (num < 1 || num > 999) {
             System.out.println("INVAILD NUMBER");
-        } else if (num / 100 < 1){
-            tens();
-            ones();
-        } else {
-            ones();
-            hundreds();
-            tens();
-            ones();
-            
-        }
 
+        }
     }
 
 }

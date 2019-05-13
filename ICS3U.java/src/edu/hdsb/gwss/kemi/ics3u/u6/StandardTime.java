@@ -47,8 +47,9 @@ public class StandardTime {
         StringTokenizer st = new StringTokenizer(tTime, ": ");
         int hour = Integer.parseInt(st.nextToken());
         int min = Integer.parseInt(st.nextToken());
-        String amPm = tTime.substring(tTime.length()- 2);
+        String amPm = st.nextToken();
         int sHour;
+        System.out.println(tTime);
         if (amPm.equals("AM") &&  hour == 12) {
             System.out.print("00:" + min);
         }else if (amPm.equals("PM") && hour == 12) {

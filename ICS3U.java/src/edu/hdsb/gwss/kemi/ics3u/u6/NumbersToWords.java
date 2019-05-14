@@ -17,7 +17,7 @@ public class NumbersToWords {
     /**
      * @param args the command line arguments
      */
-    //This asks for user number input.
+    //This asks for user number input between 10 and 99.
     public static void inputNum() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a number between 10 and 99:");
@@ -93,7 +93,7 @@ public class NumbersToWords {
 
     }
 
-    // Accounts for numbers between 11 and 19
+    // Accounts for numbers between 11 and 19(more specifically 11, 12, 13, 15).
     public static void teens() {
         int x = num % 10;
         switch (x) {
@@ -117,10 +117,11 @@ public class NumbersToWords {
     // Global variable can be used anywhere in the entire code
     public static int num;
 
-    // Depending on the type of numeber, they use different method(s) to make a specific number in its relation to the number 10
+    // Depending on the type of numeber, they use different method(s) to make a specific number in its relation to the number 10.
+    // Also checks for invaild numbers.
     public static void main(String[] args) {
-        while (true) {
-            inputNum();
+        inputNum();
+        if (num >= 10 && num <= 99) {
             if (num % 10 == 0) {
                 tens();
             } else if (num > 12 && num <= 19 && num != 13 && num != 15) {
@@ -128,14 +129,14 @@ public class NumbersToWords {
                 teens();
             } else if (num == 11 || num == 12 || num == 13 || num == 15) {
                 teens();
-            } else if (num < 10 || num > 99) {
-                System.out.println("INVAILD NUMBER");
             } else {
                 tens();
                 ones();
             }
-
+        } else if (num < 10 || num > 99) {
+            System.out.println("INVAILD NUMBER");
         }
+
     }
 
 }

@@ -22,7 +22,7 @@ public class StandardTime {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter a Time:");
-        String time = "12:09 PM";
+        String time = "5:09 AM";
         convertToStandardTime(time);
     }
     //This method converts standard time to traditional time(has AM or PM)and is codeed to avoid mistakes while printing
@@ -85,7 +85,7 @@ public class StandardTime {
         String amPm = st.nextToken();
         int sHour;
         //invalid time
-        if (min > 59 || min < 0 || hour > 12 || hour <= 0) {
+        if (min > 59 || min < 0 || hour > 12 || hour <= 0|| !amPm.equals("AM")) {
             System.out.println("invalid time");
         } else {
             System.out.print("Standard Time: ");

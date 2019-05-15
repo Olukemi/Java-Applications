@@ -21,18 +21,20 @@ public class CountingVowels2 {
         Scanner input = new Scanner(System.in);
         System.out.println("Counting Vowel");
         System.out.println("The Program counts the number of vowels in a sentence.");
-        int counter = 0;
-
         System.out.println("Enter a sentence:");
         String sentence = input.nextLine();
-
+        System.out.println("There are " + countVowels(sentence) + " vowels in the sentence.");
+    }
+    
+    public static int countVowels(String sentence){
+        int counter = 0;
         for (int i = 0; i < sentence.length(); i++) {
             char vowels = sentence.charAt(i);
             if (vowels == 'a' || vowels == 'e' || vowels == 'i' || vowels == 'o' || vowels == 'u' ){
                 counter++;
             }
         }
-        System.out.println("There are " + counter + "vowels in the sentence.");
+        return counter;
     }
 
 }

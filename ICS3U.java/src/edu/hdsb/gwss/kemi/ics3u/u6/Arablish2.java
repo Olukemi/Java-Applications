@@ -28,40 +28,50 @@ public class Arablish2 {
         File inFile = new File("DATA31.txt");
         PrintWriter output = new PrintWriter(outFile);
         Scanner input = new Scanner(inFile);
-
-        //CONSTANTS: N/A
-        
-        //VARIABLES: N/A (They are in processing and they cannot move because it ruins the code).
-        
-        //PROCESSING && OUTPUT: Reverses the words' order and their letters but keeps the number string as they are.
-        while (input.hasNextLine()) {
-            StringTokenizer st = new StringTokenizer(input.nextLine(), "  ");
-            int numberOfTokens = st.countTokens();
-            String reverseLine = "";
-            while (st.hasMoreTokens()) {
-                String word = st.nextToken();
-                String reverseWord = "";
-                String reverse = "";
-                boolean ifNum;
-                int counter = 0;
-                for (int i = word.length() - 1; i >= 0; i--) {
-                    if ((word.codePointAt(i) >= 48) && (word.codePointAt(i) <= 57)) {
-                        counter++;
-                    }
-                    if (counter == word.length()) {
-                        reverseWord = word;
-                    } else {
-                        reverse = reverse + word.charAt(i);
-                        reverseWord = reverse + " ";
-                    }
-                }
-                reverseLine = reverseWord + " " + reverseLine;
-            }
-            output.println(reverseLine);
-        }
-        //CLOSING FILE: This tells the program that the file is complete and can process any actions.
+        String line = input.nextLine();
+        reverseWord(line);
         output.close();
 
+    }
+
+    public static boolean isNumeric(String line) {
+        StringTokenizer st = new StringTokenizer(line, "  ");
+        String word = st.nextToken();
+        String reverseWord = "";
+        int counter = 0;
+        boolean isNumeric = false;
+        for (int i = word.length() - 1; counter <= word.length(); i--) {
+            if ((word.codePointAt(i) >= 48) && (word.codePointAt(i) <= 57)) {
+                counter++;
+                isNumeric = true;
+            }
+            if (isNumeric) {
+                reverseWord = word;
+            }
+        }
+        return true;
+    }
+
+    //CONSTANTS: N/A
+    //VARIABLES: N/A (They are in processing and they cannot move because it ruins the code).
+    public static String reverseWord(String line) {
+        //PROCESSING && OUTPUT: Reverses the words' order and their letters but keeps the number string as they are.
+        StringTokenizer st = new StringTokenizer(line, "  ");
+        String reverseLine = "";
+        while (st.hasMoreTokens()) {
+            String word = st.nextToken();
+            String reverseWord = "";
+            String reverse = "";
+            for (int i = word.length() - 1; i >= 0; i--) {
+                isNumeric(word);
+                reverse = reverse + word.charAt(i);
+                reverseWord = reverse + " ";
+                reverseLine = reverseWord + " " + reverseLine;
+            }
+            //CLOSING FILE: This tells the program that the file is complete and can process any actions.
+
+        }
+        return line;
     }
 
 }

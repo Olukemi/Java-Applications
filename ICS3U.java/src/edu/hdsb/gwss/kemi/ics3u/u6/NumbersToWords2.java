@@ -23,6 +23,7 @@ public class NumbersToWords2 {
         System.out.println("Enter a number between 1 and 999:");
         num = input.nextInt();
     }
+    
     // Accounts for any number that is perfectly divisable by 100.
     public static void hundreds() {
         int x = Math.round(num / 100);
@@ -95,6 +96,7 @@ public class NumbersToWords2 {
                 break;
         }
     }
+    
     //Accounts for any number that is between 1 and 9.
     public static void ones() {
         int x = 0;
@@ -134,7 +136,6 @@ public class NumbersToWords2 {
                 System.out.print("NINE");
                 break;
         }
-
     }
     // Accounts for numbers between 11 and 19(more specifically 11, 12, 13, 15).
     public static void teens() {
@@ -155,7 +156,6 @@ public class NumbersToWords2 {
             default:
                 System.out.print("TEEN");
         }
-
     }
     // Global variable can be used anywhere in the entire code.
     public static int num;
@@ -198,9 +198,7 @@ public class NumbersToWords2 {
                 hundreds();
                 tens();
                 ones();
-
             }
-
         } else if (num < 1 || num > 999) {
             System.out.println("INVAILD NUMBER");
         }

@@ -23,10 +23,14 @@ public class StandardTime {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter a Time:");
         String time = input.nextLine();
-        convertToStandardTime(time);
+        if (time.substring(time.length()-2).toUpperCase().equals("AM") || time.substring(time.length()-2).toUpperCase().equals("PM")){
+            convertToStandardTime(time);
+        } else {
+        convertToTraditional(time);
+        } 
 
     }
-
+ 
     //This method converts standard time to traditional time(has AM or PM)and is coded to avoid mistakes while printing
     public static void convertToTraditional(String sTime) {
         StringTokenizer st = new StringTokenizer(sTime, ": ");
@@ -36,7 +40,7 @@ public class StandardTime {
         //invaild time
         if (min > 59 || min < 0 || hour >= 24) {
             System.out.println("invalid time");
-        } else {
+        } else if (sTime.length() <= 5 ){
             System.out.print("Traditional Time: ");
             // time between 13 and 23:59(1pm to 11:59pm)
             if (hour > 12 && hour < 24) {
@@ -76,24 +80,26 @@ public class StandardTime {
                 } else {
                     System.out.print(tHour + ":" + min + " AM");
                 }
-            }
+            }      
+        } else {
+            System.out.println("invalid time");
         }
     }
 
     //This method converts traditional time(has AM or PM) to standard time and is coded to avoid mistakes while printing.
     public static void convertToStandardTime(String tTime) {
-        StringTokenizer st = new StringTokenizer(tTime, ": ");
+        StringTokenizer st = new StringTokenizer(tTime, ":  ");
         int hour = Integer.parseInt(st.nextToken());
         int min = Integer.parseInt(st.nextToken());
         String amPm = st.nextToken();
-        String caseamPM = amPm.toUpperCase();
+        String caseamPm = amPm.toUpperCase();
         int sHour;
         //invalid time
         if (min > 59 || min < 0 || hour > 12 || hour <= 0) {
             System.out.println("invalid time");
         } else {
             //time that is between 12am and 12:59am (00 to 00:59)
-            if (caseamPM.equals("AM") && hour == 12) {
+            if (caseamPm.equals("AM") && hour == 12) {
                 System.out.print("Standard Time: ");
                 if (min == 00) {
                     System.out.println("00:" + min + "0");
@@ -103,7 +109,7 @@ public class StandardTime {
                     System.out.print("00:" + min);
                 }
                 //time that is between 12pm and 12:59pm (12 and 12:59)
-            } else if (caseamPM.equals("PM") && hour == 12) {
+            } else if (caseamPm.equals("PM") && hour == 12) {
                 System.out.print("Standard Time: ");
                 if (min == 0) {
                     System.out.println(hour + ":" + min + "0");
@@ -113,7 +119,7 @@ public class StandardTime {
                     System.out.print(hour + ":" + min);
                 }
                 //time that is between 1am and 11:59am (01 to 11:59)
-            } else if (caseamPM.equals("AM") && hour != 12) {
+            } else if (caseamPm.equals("AM") && hour != 12) {
                 System.out.print("Standard Time: ");
                 if (min == 0) {
                     System.out.println(hour + ":" + min + "0");
@@ -123,7 +129,7 @@ public class StandardTime {
                     System.out.print(hour + ":" + min);
                 }
                 //time that is between 1pm and 11:59pm (13 to 23:59)
-            } else if (caseamPM.equals("PM") && hour != 12) {
+            } else if (caseamPm.equals("PM") && hour != 12) {
                 System.out.print("Standard Time: ");
                 sHour = hour + 12;
                 if (min == 0) {

@@ -38,9 +38,9 @@ public class StandardTime {
         int min = Integer.parseInt(st.nextToken());
         int tHour;
         //invaild time
-        if (min > 59 || min < 0 || hour >= 24) {
+        if (min > 59 || min < 0 || hour >= 24 || sTime.length() <= 4) {
             System.out.println("invalid time");
-        } else if (sTime.length() <= 5 ){
+        } else if (sTime.length() <= 5){
             System.out.print("Traditional Time: ");
             // time between 13 and 23:59(1pm to 11:59pm)
             if (hour > 12 && hour < 24) {
@@ -95,7 +95,7 @@ public class StandardTime {
         String caseamPm = amPm.toUpperCase();
         int sHour;
         //invalid time
-        if (min > 59 || min < 0 || hour > 12 || hour <= 0) {
+        if (min > 59 || min < 0 || hour > 12 || hour <= 0|| tTime.length() <= 6) {
             System.out.println("invalid time");
         } else {
             //time that is between 12am and 12:59am (00 to 00:59)

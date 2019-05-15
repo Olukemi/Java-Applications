@@ -24,9 +24,8 @@ public class Palidrome2 {
                 + " and backwards are called palindromes.  This program determine if a word is a palindrome.");
         System.out.println("Enter a Word: ");
         String word = input.nextLine();
-        String flipWord = isWordAPalindrome(word);
-        System.out.println(word + " backwards is " + flipWord);
-        if (flipWord.equals(word)){
+        System.out.println(word + " backwards is " + isWordAPalindrome(word));
+        if (isWordAPalindrome(word)){
             System.out.println(word + " is a palindrome.");
         } else {
             System.out.println(word + " is not a palindrome.");
@@ -34,14 +33,14 @@ public class Palidrome2 {
 
     }
 
-    public static String isWordAPalindrome(String word) {
+    public static boolean isWordAPalindrome(String word) {
         String reverse = "";
         String reverseWord = "";
         for (int i = word.length() - 1; i >= 0; i--) {
             reverse = reverse + word.charAt(i);
             reverseWord = reverse + " ";
         }
-        return reverseWord;
+        return true;
     }
 
 }

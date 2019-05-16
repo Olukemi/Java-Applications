@@ -1,7 +1,7 @@
 /*
  * Name: Kemi
- * Date:
- * Version:
+ * Date: May 15th 2019
+ * Version: v0.01
  * Description:
  */
 package edu.hdsb.gwss.kemi.ics3u.u6;
@@ -25,7 +25,7 @@ public class Palidrome2 {
         System.out.println("Enter a Word: ");
         String word = input.nextLine();
         System.out.println(word + " backwards is " + isWordAPalindrome(word));
-        if (isWordAPalindrome(word)){
+        if (isWordAPalindrome(word).equals(word)) {
             System.out.println(word + " is a palindrome.");
         } else {
             System.out.println(word + " is not a palindrome.");
@@ -33,14 +33,14 @@ public class Palidrome2 {
 
     }
 
-    public static boolean isWordAPalindrome(String word) {
+    public static String isWordAPalindrome(String word) {
         String reverse = "";
         String reverseWord = "";
         for (int i = word.length() - 1; i >= 0; i--) {
             reverse = reverse + word.charAt(i);
-            reverseWord = reverse + " ";
+            reverseWord = reverse + "";
         }
-        return true;
+        return reverseWord;
     }
 
 }

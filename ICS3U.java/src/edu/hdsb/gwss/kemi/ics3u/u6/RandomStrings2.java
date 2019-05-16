@@ -5,10 +5,10 @@
  */
 package edu.hdsb.gwss.kemi.ics3u.u6;
 
-import edu.hdsb.gwss.kemi.ics3u.u5.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  *
@@ -20,20 +20,27 @@ public class RandomStrings2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("RandomStrings.txt");
-        PrintWriter output = new PrintWriter(file);
-        
-        
-
-        String str;
+        File outfile = new File("RandomStrings.txt");
+        PrintWriter output = new PrintWriter(outfile);
+        File infile = new File("RandomStrings.txt");
+        Scanner input = new Scanner(infile);
         for (int counter = 1; counter <= 100; counter++) {
-//            str = char ((int) (Math.random() * 26) + 'A');
-            for (int strCounter = 0; strCounter <= 6; strCounter++){
-            }
-            output.println();
+            output.println(randomString(6));
         }
-
+        while (input.hasNext()) {
+            System.out.println(input.nextLine());
+        }
         output.close();
+    }
+
+    public static String randomString(int length) {
+        String str = "";
+        char letter;
+        for (int strCounter = 0; strCounter < length; strCounter++) {
+            letter = (char) ((int) (Math.random() * 26) + 'A');
+            str = str + letter;
+        }
+        return str;
     }
 
 }

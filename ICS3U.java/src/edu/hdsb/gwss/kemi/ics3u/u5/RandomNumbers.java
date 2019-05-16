@@ -22,12 +22,14 @@ public class RandomNumbers {
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("RandomNumbers.txt");
         PrintWriter output = new PrintWriter(file);
+        Scanner input = new Scanner(file);
         
 
         for (int num = 0, counter = 1; counter <= 100; counter++) {
            num = (int) (Math.random() * 100) + 1;
            output.println(num);
         }
+        
 
         output.close();
     }

@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Kemi
+ * Date: May 17th 2019
+ * Version: v0.01
+ * Description: This program will reduce any fraction into its lowest terms.
  */
 package edu.hdsb.gwss.kemi.ics3u.u6;
 

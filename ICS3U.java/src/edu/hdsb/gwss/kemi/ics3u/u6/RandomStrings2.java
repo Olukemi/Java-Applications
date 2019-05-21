@@ -28,7 +28,8 @@ public class RandomStrings2 {
             output.println(randomString(6));
         }
         while (input.hasNext()) {
-            System.out.println(input.nextLine());
+            String line = input.nextLine();
+            System.out.println(line);
         }
         output.close();
     }

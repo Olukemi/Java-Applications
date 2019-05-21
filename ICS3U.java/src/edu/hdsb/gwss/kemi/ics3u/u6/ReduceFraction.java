@@ -46,11 +46,11 @@ public class ReduceFraction {
         String reFrac = "";
         int answerNum, answerDen;
         int gcf = 1;
-        if ((num % den) == 0) {
+        if (den == 0) {
+            reFrac = "undefined";
+        } else if ((num % den) == 0) {
             reduceFrac = num / den;
             reFrac = Integer.toString(reduceFrac);
-        } else if (den == 0) {
-            reFrac = "undefined";
         } else if (num == 0) {
             reduceFrac = 0;
             reFrac = Integer.toString(reduceFrac);
@@ -62,15 +62,15 @@ public class ReduceFraction {
             }
             answerNum = num / gcf;
             answerDen = den / gcf;
-            if (answerNum < 0 && answerDen < 0){
+            if (answerNum < 0 && answerDen < 0) {
                 answerNum = answerNum / -1;
                 answerDen = answerDen / -1;
-            } else if (answerDen < 0){
+            } else if (answerDen < 0) {
                 answerDen = answerDen / -1;
                 answerNum = answerNum * -1;
             }
-            reFrac = reFrac + Integer.toString(answerNum)+ "/" + Integer.toString(answerDen);
-            
+            reFrac = reFrac + Integer.toString(answerNum) + "/" + Integer.toString(answerDen);
+
         }
 
         return reFrac;

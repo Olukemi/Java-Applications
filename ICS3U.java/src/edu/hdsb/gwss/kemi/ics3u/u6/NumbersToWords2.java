@@ -1,6 +1,6 @@
 /*
  * Name: Kemi
- * Date: May 11th 2019.
+ * Date: May 11th 2019
  * Version: v0.01
  * Description: This program that converts any number from 1 to 999 from its digit representation to its word representation.
  */

@@ -11,6 +11,8 @@ public void setup() {
   
 }
 public void draw(){
+  
+  //background
   background(0);
   //moon
   fill(255);
@@ -69,7 +71,6 @@ public void draw(){
   ellipse(400, 420, 200, 100);
   ellipse(215, 450, 150, 200);
   ellipse(300, 350, 50, 50);
- 
  
 }
 

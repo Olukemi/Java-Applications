@@ -21,6 +21,7 @@ public class ReduceFraction {
     /**
      * @param args the command line arguments
      */
+    //Prints the reduced fraction in another file by calling a method that does the reduction. 
     public static void main(String[] args) throws FileNotFoundException {
         File inFile = new File("ReduceInput.txt");
         File outFile = new File("ReduceOutput.txt");
@@ -32,20 +33,20 @@ public class ReduceFraction {
         }
         output.close();
     }
-
+    //This converts the string into an integer from a string from an input file. It also calls on the method below which
+    //finds the gcd.
     public static String stringToNumbers(String line) {
         StringTokenizer st = new StringTokenizer(line, "/ ");
         int num = Integer.parseInt(st.nextToken());
         int den = Integer.parseInt(st.nextToken());
-        String answer = greatestCommonDivisor(num, den);
+        String answer = typeOfFractionCheck(num, den);
         return answer;
     }
-
-    public static String greatestCommonDivisor(int num, int den) {
+    //This method finds the gcd and checks for any special fraction, with signs and placement of those signs, if the fraction
+    //is being divided by 0 or if the numerator is 0 and more. It then returns the reduced fraction.
+    public static String typeOfFractionCheck(int num, int den) {
         int reduceFrac;
         String reFrac = "";
-        int answerNum, answerDen;
-        int gcf = 1;
         if (den == 0) {
             reFrac = "undefined";
         } else if ((num % den) == 0) {
@@ -55,13 +56,24 @@ public class ReduceFraction {
             reduceFrac = 0;
             reFrac = Integer.toString(reduceFrac);
         } else {
-            for (int i = 2; i <= Math.abs(Math.min(num, den)); i++) {
+            reFrac = greatestCommonDivisor(num, den);
+
+        } 
+
+        return reFrac;
+    }
+    
+    public static String greatestCommonDivisor(int num, int den) {
+        int answerNum, answerDen;
+        int gcd = 1;
+        String reFrac = "";
+        for (int i = 2; i <= Math.abs(Math.min(num, den)); i++) {
                 if (num % i == 0 && den % i == 0) {
-                    gcf = i;
+                    gcd = i;
                 }
             }
-            answerNum = num / gcf;
-            answerDen = den / gcf;
+            answerNum = num / gcd;
+            answerDen = den / gcd;
             if (answerNum < 0 && answerDen < 0) {
                 answerNum = answerNum / -1;
                 answerDen = answerDen / -1;
@@ -70,10 +82,8 @@ public class ReduceFraction {
                 answerNum = answerNum * -1;
             }
             reFrac = reFrac + Integer.toString(answerNum) + "/" + Integer.toString(answerDen);
-
-        }
-
-        return reFrac;
+            
+            return reFrac;
     }
 
 }

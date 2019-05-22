@@ -2,7 +2,7 @@
  * Name: Kemi
  * Date: May 17th 2019
  * Version: v0.01
- * Description: This program will
+ * Description: This program will convert standard time to traditional and vice versa, then prints the conversion in another file.
  */
 package edu.hdsb.gwss.kemi.ics3u.u6;
 
@@ -21,6 +21,8 @@ public class TimeChange {
     /**
      * @param args the command line arguments
      */
+    //The main method controls what happens to the return values of the converted time and specifically they are printed into
+    //another file. Also determines if the inputed time is standard or traditional.
     public static void main(String[] args) throws FileNotFoundException {
         File outFile = new File("TimeOutput.txt");
         File inFile = new File("TimeInput.txt");

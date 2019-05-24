@@ -33,6 +33,7 @@ public class ReduceFraction {
         }
         output.close();
     }
+
     //This converts the string into an integer from a string from an input file. It also calls on the method below which
     //finds the gcd.
     public static String stringToNumbers(String line) {
@@ -42,6 +43,7 @@ public class ReduceFraction {
         String answer = typeOfFractionCheck(num, den);
         return answer;
     }
+
     //This method finds the gcd and checks for any special fraction, with signs and placement of those signs, if the fraction
     //is being divided by 0 or if the numerator is 0 and more. It then returns the reduced fraction.
     public static String typeOfFractionCheck(int num, int den) {
@@ -58,32 +60,32 @@ public class ReduceFraction {
         } else {
             reFrac = greatestCommonDivisor(num, den);
 
-        } 
+        }
 
         return reFrac;
     }
-    
+
     public static String greatestCommonDivisor(int num, int den) {
         int answerNum, answerDen;
         int gcd = 1;
         String reFrac = "";
         for (int i = 2; i <= Math.abs(Math.min(num, den)); i++) {
-                if (num % i == 0 && den % i == 0) {
-                    gcd = i;
-                }
+            if (num % i == 0 && den % i == 0) {
+                gcd = i;
             }
-            answerNum = num / gcd;
-            answerDen = den / gcd;
-            if (answerNum < 0 && answerDen < 0) {
-                answerNum = answerNum / -1;
-                answerDen = answerDen / -1;
-            } else if (answerDen < 0) {
-                answerDen = answerDen / -1;
-                answerNum = answerNum * -1;
-            }
-            reFrac = reFrac + Integer.toString(answerNum) + "/" + Integer.toString(answerDen);
-            
-            return reFrac;
+        }
+        answerNum = num / gcd;
+        answerDen = den / gcd;
+        if (answerNum < 0 && answerDen < 0) {
+            answerNum = answerNum / -1;
+            answerDen = answerDen / -1;
+        } else if (answerDen < 0) {
+            answerDen = answerDen / -1;
+            answerNum = answerNum * -1;
+        }
+        reFrac = reFrac + Integer.toString(answerNum) + "/" + Integer.toString(answerDen);
+
+        return reFrac;
     }
 
 }

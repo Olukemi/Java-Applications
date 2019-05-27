@@ -1,0 +1,16 @@
+public static double toFahrenheit(int celsius){
+	double fahrenheit = (double)(9/5 * celsius) + 32;
+	return fahrenheit;
+}
+
+public static double toCelsius(int fahrenheit){
+	double celsius = (double)(fahrenheit - 32) / (9/5);
+	return celsius;
+}
+
+ int degreeFa = 76;
+ int degreeCe = 25;
+ double degreeFaToCe = toCelsius(degreeFa);
+ double degreeCeToFa = toFahrenheit(degreeCe);
+ System.out.println(degreeFa + " degree Fahrenheit is " + degreeFaToCe + " degrees in Celsius")
+ System.out.println(degreeCe + " degree Celsius is " + degreeCeToFa + " degrees in Fahrenheit")

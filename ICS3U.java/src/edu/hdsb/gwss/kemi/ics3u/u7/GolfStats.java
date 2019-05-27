@@ -47,8 +47,8 @@ public class GolfStats {
     }
 
     public static int minValue(int data[]) {
-        int min = data[0];
-        for (int i = 1; i < data.length; i++) {
+        int min = data[3];
+        for (int i = 1; i < data.length; i--) {
             if (data[i] < min) {
                 min = data[i];
             }

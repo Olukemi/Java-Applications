@@ -18,8 +18,8 @@ public class SelectionSort {
         int numbers[] = {20, 77, 41, 834, 196, 2, 111, 508, 16, 27};
         display(numbers);
         selectionSort(numbers);
-        selectionSort(numbers);
         display(numbers);
+        selectionSort(numbers);
     }
     public static void selectionSort(int numbers[]) {
         int swaps = 0;
@@ -29,14 +29,19 @@ public class SelectionSort {
         for (int pass = 0; pass < numbers.length && swapMade; pass++) {
             swapMade = false;
             // PASS
-            for (int i = 1, max = numbers[0]; i < numbers.length - 1 - pass; i++) {
+            int maxIndex =  0;
+            for (int i = 1; i < numbers.length - 1 - pass; i++) {
+                int max = numbers[0];
                 if (numbers[i] > max) {
                     max = numbers[i];
+                    comps++;
+                    maxIndex = i;
                 }
-                swap(numbers, i, i + 1);
+                swap(numbers, maxIndex, numbers.length -1);
                     swapMade = true;
                     swaps++;
-                comps++;
+                    
+                
             }
             
         }

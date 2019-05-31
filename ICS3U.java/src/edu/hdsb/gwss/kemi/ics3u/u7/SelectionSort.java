@@ -29,21 +29,21 @@ public class SelectionSort {
         for (int pass = 0; pass < numbers.length && swapMade; pass++) {
             swapMade = false;
             // PASS
+            int max = numbers[0];
             int maxIndex =  0;
             for (int i = 1; i < numbers.length - 1 - pass; i++) {
-                int max = numbers[0];
                 if (numbers[i] > max) {
                     max = numbers[i];
+                    System.out.println(max);
                     comps++;
-                    maxIndex = i;
+                } else {
+                    max = max;
                 }
-                swap(numbers, maxIndex, numbers.length -1);
+                maxIndex = i;
+            }
+            swap(numbers, maxIndex, numbers.length -1);
                     swapMade = true;
                     swaps++;
-                    
-                
-            }
-            
         }
         System.out.println("COMPS: " + comps );
         System.out.println("SWAPS: " + swaps );

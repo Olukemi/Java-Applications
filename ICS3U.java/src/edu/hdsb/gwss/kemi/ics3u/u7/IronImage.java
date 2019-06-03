@@ -59,6 +59,7 @@ public class IronImage {
     }
     public static BufferedImage unhideIronPuzzle( BufferedImage image ) {
         Color c;
+        Color d;
         int r;
         for( int w = 0; w < image.getWidth(); w++ ) {
             for( int h = 0; h < image.getHeight(); h++ ) {         

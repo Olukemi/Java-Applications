@@ -27,8 +27,8 @@ public class IronImage {
         // IMAGES
         //  1. iron-puzzle.png
         //  2. copper-puzzle.png
-        int imageNumber = 1;
-        switch(imageNumber) {
+        int imageNumber = 2;
+        switch (imageNumber) {
             case 1:
                 fileName = "iron-puzzle.png";
                 break;
@@ -39,50 +39,54 @@ public class IronImage {
 
         // READ IMAGE
         try {
-            image = ImageIO.read( new File( fileName ) );
-        } catch(IOException e) {
+            image = ImageIO.read(new File(fileName));
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
         // CREATE GUI
-        DrawingPanel panel = new DrawingPanel( image.getWidth(), image.getHeight() );
+        DrawingPanel panel = new DrawingPanel(image.getWidth(), image.getHeight());
         //panel.setImage( image );
 
-        switch(imageNumber) {
+        switch (imageNumber) {
             case 1:
-                panel.setImage( unhideIronPuzzle( image ) );
+                panel.setImage(unhideIronPuzzle(image));
                 break;
             case 2:
-                panel.setImage( unhideCopperPuzzle( image ) );
+                panel.setImage(unhideCopperPuzzle(image));
                 break;
         }
     }
-    public static BufferedImage unhideIronPuzzle( BufferedImage image ) {
+
+    public static BufferedImage unhideIronPuzzle(BufferedImage image) {
         Color c;
-        Color d;
+        Color newColor;
         int r;
-        for( int w = 0; w < image.getWidth(); w++ ) {
-            for( int h = 0; h < image.getHeight(); h++ ) {         
+        for (int w = 0; w < image.getWidth(); w++) {
+            for (int h = 0; h < image.getHeight(); h++) {
                 c = new Color(image.getRGB(w, h));
-                int b = 0;
-                int g = 0;
-                image.getRGB(b, g);
-                
-                
+                r = c.getRed() * 10;
+                newColor = new Color(r, 0, 0);
+                image.setRGB(w, h, newColor.getRGB());
+
             }
         }
 
         return image;
     }
-    public static BufferedImage unhideCopperPuzzle( BufferedImage image ) {
+
+    public static BufferedImage unhideCopperPuzzle(BufferedImage image) {
         Color c;
+        Color newColor;
         int r, g, b;
-        for( int w = 0; w < image.getWidth(); w++ ) {
-            for( int h = 0; h < image.getHeight(); h++ ) {
-                
-                // TODO: YOUR CODE
-               
-                
+        for (int w = 0; w < image.getWidth(); w++) {
+            for (int h = 0; h < image.getHeight(); h++) {
+                c = new Color(image.getRGB(w, h));
+                r=0;
+                g = Math.min(c.getGreen() * 20, 255);
+                b = Math.min(c.getBlue() * 20, 255);
+                newColor = new Color(r, g, b);
+                image.setRGB(w, h, newColor.getRGB());
             }
         }
 

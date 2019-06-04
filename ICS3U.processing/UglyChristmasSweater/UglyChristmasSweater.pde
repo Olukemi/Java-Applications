@@ -22,11 +22,16 @@ void setup() {
 /***************************************
  ** Prase File (PRINT OUT X/Y FOR NOW)
 /***************************************/
+  
+
 void parseFile( String[] lines ) {
 
   for ( int i = 0; i < lines.length; i++ ) {
-
-    // LINE
-    println( lines[i] );
+    
+    String newLine = lines[i];
+    String [] coordinates = splitTokens(newLine, ", ( ) ");
+    print(coordinates[0] + " ");  // Prints "a"
+    println(coordinates[1]);  // Prints "b"
+  
   }
 }

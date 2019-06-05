@@ -18,11 +18,22 @@ void setup() {
 
   // PART 1: PARSE FILE
   parseFile( lines );
+  drawUglySweater();
 }
 
-/***************************************
- ** Prase File (PRINT OUT X/Y FOR NOW)
-/***************************************/
+void drawUglySweater(){
+  int [][] shape;
+  for(int shapeCounter = 0;  shapeCounter < data.length; shapeCounter++){
+    
+    shape = data[shapeCounter];
+    
+    beginShape();
+    for(int pt = 0;  pt < shape.length; pt++){
+      vertex(shape[pt][0], shape[pt][1]);
+    }
+    endShape();
+  }
+}
   
 
 void parseFile( String[] lines ) {
@@ -34,15 +45,38 @@ void parseFile( String[] lines ) {
   for ( int line = 0; line < lines.length; line++ ) {
     
     String newLine = lines[line];
-    st = new StringTokenizer(newLine, ", ( ) ");
-    int x = Integer.parseInt(st.nextToken());
-    int y = Integer.parseInt(st.nextToken());  
+    st = new StringTokenizer(newLine, ", ( ) "); 
     shape = new int[st.countTokens() /2] [2];
-    shape[st.countTokens() /2][0] = x; 
-    shape[st.countTokens() /2][1] = y;
     
-    //put data into the array
+    for (int coord = 0; coord < shape.length; coord++){
+      shape[coord][0] = Integer.parseInt(st.nextToken()); 
+      shape[coord][1] = Integer.parseInt(st.nextToken());
+    }
+    
+    println("Max X :" + findMax(shape, 0));
+    println("Max Y :" + findMax(shape, 1));
+    println("Min X :" + findMin(shape, 0));
+    println("Min Y :" + findMin(shape, 1));
     data[line] = shape;
   
   }
+}
+
+static int findMax(int[][] values, int col) {
+  int max = values[0][0];
+  for(int r = 0; r < values.length; r++){
+    if (values[r][col] > max) {
+        max = values[r][col];
+     }
+  }
+       return max;
+}
+static int findMin( int[][] values, int col ) {
+  int min = values[0][0];
+  for(int r = 0; r < values.length; r++){
+     if (values[r][col] < min) {
+         min = values[r][col];
+      }
+  }
+      return min;
 }

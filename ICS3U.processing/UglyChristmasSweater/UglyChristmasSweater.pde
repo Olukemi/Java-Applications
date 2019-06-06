@@ -1,5 +1,5 @@
 /* 
- * Ugly Christmas Sweater
+ * Ugly Christmas Sweater!
  */
 import java.util.*;
 
@@ -14,10 +14,11 @@ void setup() {
   background( 255 );
 
   // READ FILE
-  String[] lines = loadStrings( "\\data\\sweater01.txt" );
+  String[] lines = loadStrings( "\\data\\sweater03.txt" );
 
   // PART 1: PARSE FILE
   parseFile( lines );
+  transformingSweater();
   drawUglySweater();
 }
 
@@ -43,18 +44,19 @@ void transformingSweater(){
      int minY = findMinOfSweater(data, 1);
      int maxX = findMaxOfSweater(data, 0);
      int maxY = findMaxOfSweater(data, 1);
-     println ("new:");
-     println("Max X :" + findMinOfSweater(data, 0));
-     println("Max Y :" + findMinOfSweater(data, 1));
-     println("Min X :" + findMaxOfSweater(data, 0));
-     println("Min Y :" + findMaxOfSweater(data, 0));
+     int deltaX = maxX - minX;
+     int deltaY = maxY - minY;
+     
+     int factor = Math.min( width/deltaX, height/deltaY );
+     
+     println( factor );
+     
+     println( minX + " " + maxX );
+  
   for (int s = 0; s < data.length; s++){
-    for (int row = 0; row < data[s].length; s++) {
-      data[s][row][0] = data[s][row][0] + minX;
-      data[s][row][1] = data[s][row][1] + minY;
-      data[s][row][0] = data[s][row][0] + maxX;
-      data[s][row][1] = data[s][row][1] + maxY;
-
+    for (int row = 0; row < data[s].length; row++) {
+      data[s][row][0] = (data[s][row][0] + Math.abs( minX ) ) * factor;
+      data[s][row][1] = height - ( ( data[s][row][1] + Math.abs( minY ) ) * factor );
     }
   }
 
@@ -71,13 +73,11 @@ void parseFile( String[] lines ) {
     String newLine = lines[line];
     st = new StringTokenizer(newLine, ", ( ) "); 
     shape = new int[st.countTokens() /2] [2];
-    shape[st.countTokens() /2][0] = Integer.parseInt(st.nextToken()); 
-    shape[st.countTokens() /2][1] = Integer.parseInt(st.nextToken()); 
+    for (int coord = 0; coord < shape.length; coord++){
+      shape[coord][0] = Integer.parseInt(st.nextToken()); 
+      shape[coord][1] = Integer.parseInt(st.nextToken());
+    }
     
-    println("Max X :" + findMax(shape, 0));
-    println("Max Y :" + findMax(shape, 1));
-    println("Min X :" + findMin(shape, 0));
-    println("Min Y :" + findMin(shape, 1));
     data[line] = shape;
   
   }

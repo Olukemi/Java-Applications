@@ -18,6 +18,7 @@ void setup() {
 
   // PART 1: PARSE FILE
   parseFile( lines );
+  transformingSweater();
   drawUglySweater();
 }
 
@@ -35,26 +36,21 @@ void drawUglySweater(){
   }
 }
 
-/***************************************
- ** Prase File (PRINT OUT X/Y FOR NOW)
-/***************************************/
 void transformingSweater(){
      int minX = findMinOfSweater(data, 0);
      int minY = findMinOfSweater(data, 1);
      int maxX = findMaxOfSweater(data, 0);
      int maxY = findMaxOfSweater(data, 1);
-     println ("new:");
-     println("Max X :" + findMinOfSweater(data, 0));
-     println("Max Y :" + findMinOfSweater(data, 1));
-     println("Min X :" + findMaxOfSweater(data, 0));
-     println("Min Y :" + findMaxOfSweater(data, 0));
+     println("Min X :" + minX);
+     println("Min Y :" + minY);
+     println("Max X :" + maxX);
+     println("Max Y :" + maxY);
   for (int s = 0; s < data.length; s++){
-    for (int row = 0; row < data[s].length; s++) {
+    for (int row = 0; row < data[s].length; row++) {
       data[s][row][0] = data[s][row][0] + minX;
       data[s][row][1] = data[s][row][1] + minY;
       data[s][row][0] = data[s][row][0] + maxX;
       data[s][row][1] = data[s][row][1] + maxY;
-
     }
   }
 
@@ -71,13 +67,11 @@ void parseFile( String[] lines ) {
     String newLine = lines[line];
     st = new StringTokenizer(newLine, ", ( ) "); 
     shape = new int[st.countTokens() /2] [2];
-    shape[st.countTokens() /2][0] = Integer.parseInt(st.nextToken()); 
-    shape[st.countTokens() /2][1] = Integer.parseInt(st.nextToken()); 
+     for (int coord = 0; coord < shape.length; coord++){
+      shape[coord][0] = Integer.parseInt(st.nextToken()); 
+      shape[coord][1] = Integer.parseInt(st.nextToken());
+    }
     
-    println("Max X :" + findMax(shape, 0));
-    println("Max Y :" + findMax(shape, 1));
-    println("Min X :" + findMin(shape, 0));
-    println("Min Y :" + findMin(shape, 1));
     data[line] = shape;
   
   }
@@ -106,7 +100,7 @@ static int findMaxOfSweater(int data[][][], int col) {
   for( int s = 0;  s < data.length; s++){
       for(int r = 0; r < data[s].length; r++){
          if (data[s][r][col] > max) {
-           max = data[s][r][col];
+           max = Math.abs(data[s][r][col]);
          }
       }
    }
@@ -117,7 +111,7 @@ static int findMinOfSweater(int data[][][], int col) {
   for( int s = 0;  s < data.length; s++){
       for(int r = 0; r < data[s].length; r++){
          if (data[s][r][col] < min) {
-            min = data[s][r][col];
+            min = Math.abs(data[s][r][col]);
          }
       }
    }

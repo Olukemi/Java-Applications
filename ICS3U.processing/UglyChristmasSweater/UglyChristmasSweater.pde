@@ -1,5 +1,5 @@
 /* 
- * Ugly Christmas Sweater
+ * Ugly Christmas Sweater!
  */
 import java.util.*;
 
@@ -45,14 +45,24 @@ void transformingSweater(){
      println("Min Y :" + minY);
      println("Max X :" + maxX);
      println("Max Y :" + maxY);
-  for (int s = 0; s < data.length; s++){
-    for (int row = 0; row < data[s].length; row++) {
-      data[s][row][0] = data[s][row][0] + minX;
-      data[s][row][1] = data[s][row][1] + minY;
-      data[s][row][0] = data[s][row][0] + maxX;
-      data[s][row][1] = data[s][row][1] + maxY;
+
+     int deltaX = maxX - minX;
+     int deltaY = maxY - minY;
+     
+     int factor = Math.min( width/deltaX, height/deltaY );
+     for (int s = 0; s < data.length; s++){
+        for (int row = 0; row < data[s].length; row++) {
+            data[s][row][0] = (data[s][row][0] + Math.abs( minX ) ) * factor;
+            data[s][row][1] = height - ( ( data[s][row][1] + Math.abs( minY ) ) * factor );
+
     }
   }
+     
+     println( factor );
+     
+     println( minX + " " + maxX );
+  
+  
 
 }
 
@@ -67,7 +77,8 @@ void parseFile( String[] lines ) {
     String newLine = lines[line];
     st = new StringTokenizer(newLine, ", ( ) "); 
     shape = new int[st.countTokens() /2] [2];
-     for (int coord = 0; coord < shape.length; coord++){
+
+    for (int coord = 0; coord < shape.length; coord++){
       shape[coord][0] = Integer.parseInt(st.nextToken()); 
       shape[coord][1] = Integer.parseInt(st.nextToken());
     }
@@ -100,7 +111,7 @@ static int findMaxOfSweater(int data[][][], int col) {
   for( int s = 0;  s < data.length; s++){
       for(int r = 0; r < data[s].length; r++){
          if (data[s][r][col] > max) {
-           max = Math.abs(data[s][r][col]);
+           max = data[s][r][col];
          }
       }
    }
@@ -111,7 +122,7 @@ static int findMinOfSweater(int data[][][], int col) {
   for( int s = 0;  s < data.length; s++){
       for(int r = 0; r < data[s].length; r++){
          if (data[s][r][col] < min) {
-            min = Math.abs(data[s][r][col]);
+            min = data[s][r][col];
          }
       }
    }

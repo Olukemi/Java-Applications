@@ -14,7 +14,7 @@ void setup() {
   background( 255 );
 
   // READ FILE
-  String[] lines = loadStrings( "\\data\\sweater01.txt" );
+  String[] lines = loadStrings( "\\data\\sweater03.txt" );
 
   // PART 1: PARSE FILE
   parseFile( lines );
@@ -52,14 +52,12 @@ void transformingSweater(){
      int factor = Math.min( width/deltaX, height/deltaY );
      for (int s = 0; s < data.length; s++){
         for (int row = 0; row < data[s].length; row++) {
-            data[s][row][0] = (data[s][row][0] + Math.abs( minX ) ) * factor;
-            data[s][row][1] = height - ( ( data[s][row][1] + Math.abs( minY ) ) * factor );
-
-    }
-  }
+            data[s][row][0] = (data[s][row][0] + Math.abs( minX - 2) ) * factor;
+            data[s][row][1] = height - ( ( data[s][row][1] + Math.abs( minY - 2) ) * factor );
+        }
+     }
      
      println( factor );
-     
      println( minX + " " + maxX );
   
   

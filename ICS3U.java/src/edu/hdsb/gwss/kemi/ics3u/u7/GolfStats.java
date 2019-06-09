@@ -19,7 +19,7 @@ public class GolfStats {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] data = new int[4];
-        for (int i = 1; i < data.length; i++) {
+        for (int i = 0; i < data.length; i++) {
             System.out.println("Enter score:");
             data[i] = input.nextInt();
         }

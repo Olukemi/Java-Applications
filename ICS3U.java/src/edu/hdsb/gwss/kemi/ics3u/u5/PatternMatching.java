@@ -30,13 +30,11 @@ public class PatternMatching {
         Scanner input = new Scanner(inFile);
 
         //CONSTANTS: N/A
-        
         //VARIABLES: These variables are holders for where changes string in the file are stored and that can later be altered.
         String word1;
         String word2;
-        
+
         //INPUT: N/A
-        
         //PROCESSING && OUTPUT: Reads then converts letters into c and v (consonants and vowels) then compares the two strings.
         while (input.hasNext()) {
             StringTokenizer st = new StringTokenizer(input.nextLine(), " ");

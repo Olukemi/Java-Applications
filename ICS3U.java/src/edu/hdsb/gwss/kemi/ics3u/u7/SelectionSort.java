@@ -21,6 +21,7 @@ public class SelectionSort {
         display(numbers);
         selectionSort(numbers);
     }
+
     public static void selectionSort(int numbers[]) {
         int swaps = 0;
         int comps = 0;
@@ -29,24 +30,22 @@ public class SelectionSort {
         for (int pass = 0; pass < numbers.length && swapMade; pass++) {
             swapMade = false;
             // PASS
-            int max = numbers[0];
-            int maxIndex =  0;
-            for (int i = 1; i < numbers.length - 1 - pass; i++) {
-                if (numbers[i] > max) {
-                    max = numbers[i];
-                    System.out.println(max);
+
+            for (int i = 1; i < numbers.length - 1; i++) {
+                int minIndex = i;
+                for (int j = i = 1; j < numbers.length; j++) {
                     comps++;
-                } else {
-                    max = max;
+                    if (numbers[j] < numbers[minIndex]) {
+                        minIndex = j;
+                    }
                 }
-                maxIndex = i;
+                swap(numbers, minIndex, i);
+                swapMade = true;
+                swaps++;
             }
-            swap(numbers, maxIndex, numbers.length -1);
-                    swapMade = true;
-                    swaps++;
         }
-        System.out.println("COMPS: " + comps );
-        System.out.println("SWAPS: " + swaps );
+        System.out.println("COMPS: " + comps);
+        System.out.println("SWAPS: " + swaps);
     }
 
     public static void swap(int numbers[], int i, int j) {//i = 4, j = 2

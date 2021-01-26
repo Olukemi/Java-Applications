@@ -24,9 +24,9 @@ public class GolfStats {
             data[i] = input.nextInt();
         }
 
-        for (int index = 0; index < data.length; index++) {
-            System.out.println(data[index]);
-        }
+//        for (int index = 0; index < data.length; index++) {
+//            System.out.println(data[index]);
+//        }
         System.out.print("Total Score:");
         System.out.println(totalValue(data));
         System.out.print("Highest Score:");
@@ -47,8 +47,8 @@ public class GolfStats {
     }
 
     public static int minValue(int data[]) {
-        int min = data[3];
-        for (int i = 1; i < data.length; i--) {
+        int min = data[0];
+        for (int i = 1; i < data.length; i++) {
             if (data[i] < min) {
                 min = data[i];
             }
@@ -57,7 +57,7 @@ public class GolfStats {
     }
     public static int totalValue(int data[]) {
         int total = 0;
-        for (int i = 1; i < data.length; i++) {
+        for (int i = 0; i < data.length; i++) {
             total = total + data[i];
         }
         return total;
